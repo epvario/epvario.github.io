@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EPVario - open Source Paragliding Variometer</title>
-    <link>epvario.github.io/</link>
+    <link>https://epvario.github.io/</link>
     <description>Recent content on EPVario - open Source Paragliding Variometer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Sep 2025 08:00:29 +0200</lastBuildDate>
-    <atom:link href="epvario.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://epvario.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elevation</title>
-      <link>epvario.github.io/elevation/</link>
+      <link>https://epvario.github.io/elevation/</link>
       <pubDate>Tue, 02 Sep 2025 08:00:29 +0200</pubDate>
-      <guid>epvario.github.io/elevation/</guid>
+      <guid>https://epvario.github.io/elevation/</guid>
       <description>&lt;p&gt;here comes the interactive map to download the elevation data&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configurator</title>
-      <link>epvario.github.io/configurator/</link>
+      <link>https://epvario.github.io/configurator/</link>
       <pubDate>Tue, 02 Sep 2025 08:00:20 +0200</pubDate>
-      <guid>epvario.github.io/configurator/</guid>
+      <guid>https://epvario.github.io/configurator/</guid>
       <description>&lt;p&gt;Here comes the javascript configurator&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hardware</title>
-      <link>epvario.github.io/hardware/</link>
+      <link>https://epvario.github.io/hardware/</link>
       <pubDate>Tue, 02 Sep 2025 07:35:25 +0200</pubDate>
-      <guid>epvario.github.io/hardware/</guid>
+      <guid>https://epvario.github.io/hardware/</guid>
       <description>&lt;h3 id=&#34;hardware-features&#34;&gt;Hardware Features:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;RP2040&lt;/strong&gt;, dual-core Arm Cortex-M0+ processor&lt;/li&gt;&#xA;&lt;li&gt;power saving Epaper, WeAct Studio &lt;strong&gt;2.9 Inch Epaper&lt;/strong&gt; Module&lt;/li&gt;&#xA;&lt;li&gt;3.3V architecture using TPS6303 voltage regulator&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;L5M6DS3&lt;/strong&gt; IMU for accelerometer and gyro data fusion&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;BMP280&lt;/strong&gt; pressure sensor&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;M10UBX&lt;/strong&gt; GPS module (supporting GLONASS, BDSB, GALILEO, SBAS, QZSS)&lt;/li&gt;&#xA;&lt;li&gt;QMC5883 compass&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;MicroSD&lt;/strong&gt; cardslot for flight path logging&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;1W speaker&lt;/strong&gt; for excellent acustic (30x20cm)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;USB-C&lt;/strong&gt; connector&lt;/li&gt;&#xA;&lt;li&gt;MAX90357AEWL+T speaker amplifier&lt;/li&gt;&#xA;&lt;li&gt;integrated &lt;strong&gt;1100mAh Lipo&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;USB-C lipo charger (MCP73871)&lt;/li&gt;&#xA;&lt;li&gt;user interface with 3 buttons&lt;/li&gt;&#xA;&lt;li&gt;compact size and low weight&lt;/li&gt;&#xA;&lt;li&gt;3D printed case with multiple attachment options&lt;/li&gt;&#xA;&lt;li&gt;80-85g&lt;/li&gt;&#xA;&lt;li&gt;more than 15h runtime&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Firmware</title>
-      <link>epvario.github.io/firmware/</link>
+      <link>https://epvario.github.io/firmware/</link>
       <pubDate>Tue, 02 Sep 2025 07:35:17 +0200</pubDate>
-      <guid>epvario.github.io/firmware/</guid>
-      <description>&lt;p&gt;v0.1.3(RC9) &lt;a href=&#34;epvario.github.io/firmware/epvario_v0.1.3-RC9_01faa08.uf&#34;&gt;download&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;to be released&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;v0.1.3(RC4)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;new: adding SRTM elevation data to calculate and display AGL altitude&lt;/li&gt;&#xA;&lt;li&gt;change: new display layout&lt;/li&gt;&#xA;&lt;li&gt;change: removed decimal on horizontal speed&lt;/li&gt;&#xA;&lt;li&gt;fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2()&lt;/li&gt;&#xA;&lt;li&gt;fix: limit IGC handler to write BRecords once per second&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <guid>https://epvario.github.io/firmware/</guid>
+      <description>&lt;p&gt;v0.1.3(RC9) &lt;a href=&#34;https://epvario.github.io/firmware/epvario_v0.1.3-RC9_01faa08.uf2&#34;&gt;download&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;to be released&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;v0.1.3(RC4)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;new: adding SRTM elevation data to calculate and display AGL altitude&lt;/li&gt;&#xA;&lt;li&gt;change: new display layout&lt;/li&gt;&#xA;&lt;li&gt;change: removed decimal on horizontal speed&lt;/li&gt;&#xA;&lt;li&gt;fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2()&lt;/li&gt;&#xA;&lt;li&gt;fix: limit IGC handler to write BRecords once per second&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>epvario.github.io/about/</link>
+      <link>https://epvario.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>epvario.github.io/about/</guid>
+      <guid>https://epvario.github.io/about/</guid>
       <description>&lt;p&gt;this is the page about EPV&#xA;Our open Source Paragliding Variometer&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software</title>
-      <link>epvario.github.io/software/</link>
+      <link>https://epvario.github.io/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>epvario.github.io/software/</guid>
+      <guid>https://epvario.github.io/software/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;Firmware written in &lt;strong&gt;RUST&lt;/strong&gt;, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade&#xA;&lt;ul&gt;&#xA;&lt;li&gt;just drag and drop a firmware file to the USB connected vario from your PC or mobile&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Numerical Variometer on the display&lt;/li&gt;&#xA;&lt;li&gt;Altitude aMSL&lt;/li&gt;&#xA;&lt;li&gt;Altitude above Ground (using SRTM elevation data)&lt;/li&gt;&#xA;&lt;li&gt;Groundspeed and Glideratio&lt;/li&gt;&#xA;&lt;li&gt;Compass with flight direction&lt;/li&gt;&#xA;&lt;li&gt;Windspeed- and direction estimator&lt;/li&gt;&#xA;&lt;li&gt;FAI CIVL approved IGC tracklog signing (G-record)&lt;/li&gt;&#xA;&lt;li&gt;Flight and Landing detection, Flighttimer and Post-Flight Statistics&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
