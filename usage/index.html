@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>Usage | EPVario - open Source Paragliding Variometer</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="huhu">
+    <meta name="description" content="
+Pre-Takeoff:
+
+Press and hold the upper, power button for 3 seconds to turn the device on or off
+Use the side buttons to increase or decrease the volume level
+The Vario will now find your location, the SAT count on the top left will increase &amp; the Flighttimer will show &ldquo;locating&rdquo;
+Once your position is set, the Flighttimer will show &ldquo;&ndash;:&ndash;:&ndash;&rdquo;
+At this stage the vario is in pre-takeoff mode, recoding the past 20 seconds to include your takeoff in the log
+
+
+Takeoff:
+
+Once groundspeed is above &gt;2m/s for a duration of 5 seconds the vario will detect your takeoff.
+The flighttimer will start running and a 4-tone-climb sound will be noticable.
+Your position will be recorded continously
+
+
+Flying:
+
+The compass element will start working once a heading is obtained
+The wind estimator will deliver data (and continue updating) every full cycle has been flown
+
+The gathered data will outage after 10min, so the information might disappear when flying into a single direction for longer time
+
+
+After each 10min, the screen will be flushed (once drawn black and white) to clear the display from ghosting - which is a common behavior of e-Paper screens.
+
+
+Landing will be detected if groundspeed is less than &lt;2m/s for 60 seconds.
+
+optional: you can force the vario to stop recording by press and hold both volume buttons for 1 second.
+The vario will now finish the IGC logging and display your flight statistics until any of the volume buttons is pressed for 1 second or a new takeoff has been detected.
+
+
+">
     <meta name="generator" content="Hugo 0.149.0">
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
 
 
 
@@ -32,36 +66,41 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/usage/">
+      <link rel="canonical" href="https://epvario.github.io/usage/">
     
 
-    <meta property="og:url" content="http://localhost:1313/usage/">
+    <meta property="og:url" content="https://epvario.github.io/usage/">
   <meta property="og:site_name" content="EPVario - open Source Paragliding Variometer">
   <meta property="og:title" content="Usage">
-  <meta property="og:description" content="huhu">
+  <meta property="og:description" content="Pre-Takeoff: Press and hold the upper, power button for 3 seconds to turn the device on or off Use the side buttons to increase or decrease the volume level The Vario will now find your location, the SAT count on the top left will increase &amp; the Flighttimer will show “locating” Once your position is set, the Flighttimer will show “–:–:–” At this stage the vario is in pre-takeoff mode, recoding the past 20 seconds to include your takeoff in the log Takeoff: Once groundspeed is above &gt;2m/s for a duration of 5 seconds the vario will detect your takeoff. The flighttimer will start running and a 4-tone-climb sound will be noticable. Your position will be recorded continously Flying: The compass element will start working once a heading is obtained The wind estimator will deliver data (and continue updating) every full cycle has been flown The gathered data will outage after 10min, so the information might disappear when flying into a single direction for longer time After each 10min, the screen will be flushed (once drawn black and white) to clear the display from ghosting - which is a common behavior of e-Paper screens. Landing will be detected if groundspeed is less than &lt;2m/s for 60 seconds. optional: you can force the vario to stop recording by press and hold both volume buttons for 1 second. The vario will now finish the IGC logging and display your flight statistics until any of the volume buttons is pressed for 1 second or a new takeoff has been detected.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-09-02T11:19:42+02:00">
     <meta property="article:modified_time" content="2025-09-02T11:19:42+02:00">
 
   <meta itemprop="name" content="Usage">
-  <meta itemprop="description" content="huhu">
+  <meta itemprop="description" content="Pre-Takeoff: Press and hold the upper, power button for 3 seconds to turn the device on or off Use the side buttons to increase or decrease the volume level The Vario will now find your location, the SAT count on the top left will increase &amp; the Flighttimer will show “locating” Once your position is set, the Flighttimer will show “–:–:–” At this stage the vario is in pre-takeoff mode, recoding the past 20 seconds to include your takeoff in the log Takeoff: Once groundspeed is above &gt;2m/s for a duration of 5 seconds the vario will detect your takeoff. The flighttimer will start running and a 4-tone-climb sound will be noticable. Your position will be recorded continously Flying: The compass element will start working once a heading is obtained The wind estimator will deliver data (and continue updating) every full cycle has been flown The gathered data will outage after 10min, so the information might disappear when flying into a single direction for longer time After each 10min, the screen will be flushed (once drawn black and white) to clear the display from ghosting - which is a common behavior of e-Paper screens. Landing will be detected if groundspeed is less than &lt;2m/s for 60 seconds. optional: you can force the vario to stop recording by press and hold both volume buttons for 1 second. The vario will now finish the IGC logging and display your flight statistics until any of the volume buttons is pressed for 1 second or a new takeoff has been detected.">
   <meta itemprop="datePublished" content="2025-09-02T11:19:42+02:00">
   <meta itemprop="dateModified" content="2025-09-02T11:19:42+02:00">
-  <meta itemprop="wordCount" content="1">
+  <meta itemprop="wordCount" content="257">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Usage">
-  <meta name="twitter:description" content="huhu">
+  <meta name="twitter:description" content="Pre-Takeoff: Press and hold the upper, power button for 3 seconds to turn the device on or off Use the side buttons to increase or decrease the volume level The Vario will now find your location, the SAT count on the top left will increase &amp; the Flighttimer will show “locating” Once your position is set, the Flighttimer will show “–:–:–” At this stage the vario is in pre-takeoff mode, recoding the past 20 seconds to include your takeoff in the log Takeoff: Once groundspeed is above &gt;2m/s for a duration of 5 seconds the vario will detect your takeoff. The flighttimer will start running and a 4-tone-climb sound will be noticable. Your position will be recorded continously Flying: The compass element will start working once a heading is obtained The wind estimator will deliver data (and continue updating) every full cycle has been flown The gathered data will outage after 10min, so the information might disappear when flying into a single direction for longer time After each 10min, the screen will be flushed (once drawn black and white) to clear the display from ghosting - which is a common behavior of e-Paper screens. Landing will be detected if groundspeed is less than &lt;2m/s for 60 seconds. optional: you can force the vario to stop recording by press and hold both volume buttons for 1 second. The vario will now finish the IGC logging and display your flight statistics until any of the volume buttons is pressed for 1 second or a new takeoff has been detected.">
 
+      
+    
 	
-  </head><body class="ma0 avenir bg-near-white development">
+  </head><body class="ma0 avenir bg-near-white production">
 
     
    
   
 
-  <header>
-    <div class="bg-black">
+  
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://epvario.github.io/images/epv-bg.jpg');">
+    <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
@@ -125,6 +164,12 @@
   </div>
 </nav>
 
+      <div class="tc-l pv3 ph3 ph4-ns">
+        
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">Usage</div>
+          
+        
+      </div>
     </div>
   </header>
 
@@ -150,7 +195,41 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>huhu</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><ul>
+<li><strong>Pre-Takeoff:</strong>
+<ul>
+<li>Press and hold the upper, power button for 3 seconds to turn the device on or off</li>
+<li>Use the side buttons to increase or decrease the volume level</li>
+<li>The Vario will now find your location, the SAT count on the top left will increase &amp; the Flighttimer will show &ldquo;locating&rdquo;</li>
+<li>Once your position is set, the Flighttimer will show &ldquo;&ndash;:&ndash;:&ndash;&rdquo;</li>
+<li>At this stage the vario is in pre-takeoff mode, recoding the past 20 seconds to include your takeoff in the log</li>
+</ul>
+</li>
+<li><strong>Takeoff:</strong>
+<ul>
+<li>Once groundspeed is above <strong>&gt;2m/s</strong> for a duration of <strong>5 seconds</strong> the vario will detect your takeoff.</li>
+<li>The flighttimer will start running and a 4-tone-climb sound will be noticable.</li>
+<li>Your position will be recorded continously</li>
+</ul>
+</li>
+<li><strong>Flying:</strong>
+<ul>
+<li>The compass element will start working once a heading is obtained</li>
+<li>The wind estimator will deliver data (and continue updating) every full cycle has been flown
+<ul>
+<li>The gathered data will outage after 10min, so the information might disappear when flying into a single direction for longer time</li>
+</ul>
+</li>
+<li>After each 10min, the screen will be flushed (once drawn black and white) to clear the display from ghosting - which is a common behavior of e-Paper screens.</li>
+</ul>
+</li>
+<li><strong>Landing</strong> will be detected if groundspeed is less than &lt;2m/s for 60 seconds.
+<ul>
+<li><strong>optional:</strong> you can force the vario to stop recording by press and hold both volume buttons for 1 second.</li>
+<li>The vario will now finish the IGC logging and display your flight statistics until any of the volume buttons is pressed for 1 second or a new takeoff has been detected.</li>
+</ul>
+</li>
+</ul>
 <ul class="pa0">
   
 </ul>
@@ -172,7 +251,7 @@
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://epvario.github.io/" >
     &copy;  EPVario - open Source Paragliding Variometer 2025 
   </a>
     <div><div class="ananke-socials"></div>
