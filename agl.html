@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPVario - Elevation Data Coverage Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .info-panel {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .legend {
+            margin-top: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="info-panel">
+        <h3>EPVario - Elevation Data Coverage</h3>
+        <div id="selected-info">Click on a rectangle to download</div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 0, 0, 0.3);"></div>
+                <span>E000-009 (Western block)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(0, 0, 255, 0.3);"></div>
+                <span>E010-019 (Eastern block)</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([50.0, 10.0], 6);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define the zip files and their coverage areas
+        const zipFiles = [
+            { name: 'N41E000-009.zip', latStart: 41, latEnd: 42, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N41E010-019.zip', latStart: 41, latEnd: 42, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N42E000-009.zip', latStart: 42, latEnd: 43, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N42E010-019.zip', latStart: 42, latEnd: 43, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N43E000-009.zip', latStart: 43, latEnd: 44, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N43E010-019.zip', latStart: 43, latEnd: 44, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N44E000-009.zip', latStart: 44, latEnd: 45, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N44E010-019.zip', latStart: 44, latEnd: 45, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N45E000-009.zip', latStart: 45, latEnd: 46, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N45E010-019.zip', latStart: 45, latEnd: 46, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N46E000-009.zip', latStart: 46, latEnd: 47, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N46E010-019.zip', latStart: 46, latEnd: 47, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N47E000-009.zip', latStart: 47, latEnd: 48, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N47E010-019.zip', latStart: 47, latEnd: 48, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N48E000-009.zip', latStart: 48, latEnd: 49, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N48E010-019.zip', latStart: 48, latEnd: 49, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N49E000-009.zip', latStart: 49, latEnd: 50, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N49E010-019.zip', latStart: 49, latEnd: 50, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N50E000-009.zip', latStart: 50, latEnd: 51, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N50E010-019.zip', latStart: 50, latEnd: 51, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N51E000-009.zip', latStart: 51, latEnd: 52, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N51E010-019.zip', latStart: 51, latEnd: 52, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N52E000-009.zip', latStart: 52, latEnd: 53, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N52E010-019.zip', latStart: 52, latEnd: 53, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N53E000-009.zip', latStart: 53, latEnd: 54, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N53E010-019.zip', latStart: 53, latEnd: 54, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N54E000-009.zip', latStart: 54, latEnd: 55, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N54E010-019.zip', latStart: 54, latEnd: 55, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N55E000-009.zip', latStart: 55, latEnd: 56, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N55E010-019.zip', latStart: 55, latEnd: 56, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N56E000-009.zip', latStart: 56, latEnd: 57, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N56E010-019.zip', latStart: 56, latEnd: 57, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N57E000-009.zip', latStart: 57, latEnd: 58, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N57E010-019.zip', latStart: 57, latEnd: 58, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N58E000-009.zip', latStart: 58, latEnd: 59, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N58E010-019.zip', latStart: 58, latEnd: 59, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N59E000-009.zip', latStart: 59, latEnd: 60, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N59E010-019.zip', latStart: 59, latEnd: 60, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: 'N60E000-009.zip', latStart: 60, latEnd: 61, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: 'N60E010-019.zip', latStart: 60, latEnd: 61, lonStart: 10, lonEnd: 20, type: 'eastern' }
+        ];
+
+        // Function to get color based on type
+        function getColor(type) {
+            return type === 'western' ? 'rgba(255, 0, 0, 0.3)' : 'rgba(0, 0, 255, 0.3)';
+        }
+
+        function getBorderColor(type) {
+            return type === 'western' ? '#ff0000' : '#0000ff';
+        }
+
+        // Add rectangles for each zip file
+        zipFiles.forEach(zipFile => {
+            const bounds = [
+                [zipFile.latStart, zipFile.lonStart],
+                [zipFile.latEnd, zipFile.lonEnd]
+            ];
+
+            const rectangle = L.rectangle(bounds, {
+                color: getBorderColor(zipFile.type),
+                fillColor: getColor(zipFile.type),
+                fillOpacity: 0.3,
+                weight: 2
+            }).addTo(map);
+
+            // Add click event to download the zip file
+            rectangle.on('click', function() {
+                // Create download link and trigger download
+                const link = document.createElement('a');
+                link.href = 'epv_agl/'+zipFile.name;
+                link.download = zipFile.name;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Update info panel to show download initiated
+                document.getElementById('selected-info').innerHTML = `
+                    <strong>Downloading: ${zipFile.name}</strong><br>
+                    Coordinates: ${zipFile.latStart}°N-${zipFile.latEnd}°N, ${zipFile.lonStart}°E-${zipFile.lonEnd}°E<br>
+                    Type: ${zipFile.type} block<br>
+                    Area: ~111km × ~1110km
+                `;
+            });
+
+            // Add hover effects
+            rectangle.on('mouseover', function() {
+                this.setStyle({
+                    weight: 3,
+                    fillOpacity: 0.5
+                });
+            });
+
+            rectangle.on('mouseout', function() {
+                this.setStyle({
+                    weight: 2,
+                    fillOpacity: 0.3
+                });
+            });
+        });
+
+        // Fit map to show all rectangles
+        const allBounds = L.latLngBounds([41, 0], [61, 20]);
+        map.fitBounds(allBounds);
+    </script>
+</body>
+</html>

@@ -20,7 +20,25 @@ Compass with flight direction
 Windspeed- and direction estimator
 FAI CIVL approved IGC tracklog signing (G-record)
 Flight and Landing detection, Flighttimer and Post-Flight Statistics
-">
+
+Developer quickstart:
+
+Install the Rust toolchain using rustup: https://rustup.rs/.
+Install the nightly toolchain and add the target to build for the RP2040:
+
+rustup toolchain install nightly
+rustup target add thumbv6m-none-eabi
+
+To build the firmware to flash it via the BOOTSEL mode, you need elf2uf2-rs:
+
+cargo install elf2uf2-rs
+
+To build the firmware to flash it with the BOOTSEL mode, from the firmware folder run:
+
+cargo build --release
+elf2uf2-rs ./target/thumbv6m-none-eabi/release/ep-vario-firmware ep-vario-firmware.uf2 
+
+With the EPVario turned off, connect it to your computer using a USB-C cable. Hold the Up button and press and hold the power button for 2 seconds. A mass storage device should show up on your computer. Drag and drop the ep-vario-firmware.uf2 file that was just created to the device. It will automatically dismount the device and install the firmware.">
     <meta name="generator" content="Hugo 0.149.0">
     
     
@@ -52,16 +70,16 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
     <meta property="og:url" content="https://epvario.github.io/software/">
   <meta property="og:site_name" content="EPVario - open Source Paragliding Variometer">
   <meta property="og:title" content="Software">
-  <meta property="og:description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics">
+  <meta property="og:description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics Developer quickstart: Install the Rust toolchain using rustup: https://rustup.rs/. Install the nightly toolchain and add the target to build for the RP2040: rustup toolchain install nightly rustup target add thumbv6m-none-eabi To build the firmware to flash it via the BOOTSEL mode, you need elf2uf2-rs: cargo install elf2uf2-rs To build the firmware to flash it with the BOOTSEL mode, from the firmware folder run: cargo build --release elf2uf2-rs ./target/thumbv6m-none-eabi/release/ep-vario-firmware ep-vario-firmware.uf2 With the EPVario turned off, connect it to your computer using a USB-C cable. Hold the Up button and press and hold the power button for 2 seconds. A mass storage device should show up on your computer. Drag and drop the ep-vario-firmware.uf2 file that was just created to the device. It will automatically dismount the device and install the firmware.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
 
   <meta itemprop="name" content="Software">
-  <meta itemprop="description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics">
-  <meta itemprop="wordCount" content="76">
+  <meta itemprop="description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics Developer quickstart: Install the Rust toolchain using rustup: https://rustup.rs/. Install the nightly toolchain and add the target to build for the RP2040: rustup toolchain install nightly rustup target add thumbv6m-none-eabi To build the firmware to flash it via the BOOTSEL mode, you need elf2uf2-rs: cargo install elf2uf2-rs To build the firmware to flash it with the BOOTSEL mode, from the firmware folder run: cargo build --release elf2uf2-rs ./target/thumbv6m-none-eabi/release/ep-vario-firmware ep-vario-firmware.uf2 With the EPVario turned off, connect it to your computer using a USB-C cable. Hold the Up button and press and hold the power button for 2 seconds. A mass storage device should show up on your computer. Drag and drop the ep-vario-firmware.uf2 file that was just created to the device. It will automatically dismount the device and install the firmware.">
+  <meta itemprop="wordCount" content="206">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Software">
-  <meta name="twitter:description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics">
+  <meta name="twitter:description" content="Firmware written in RUST, providing great memory safety, fast code execution and a broad compatibility and easy to ugprade just drag and drop a firmware file to the USB connected vario from your PC or mobile Numerical Variometer on the display Altitude aMSL Altitude above Ground (using SRTM elevation data) Groundspeed and Glideratio Compass with flight direction Windspeed- and direction estimator FAI CIVL approved IGC tracklog signing (G-record) Flight and Landing detection, Flighttimer and Post-Flight Statistics Developer quickstart: Install the Rust toolchain using rustup: https://rustup.rs/. Install the nightly toolchain and add the target to build for the RP2040: rustup toolchain install nightly rustup target add thumbv6m-none-eabi To build the firmware to flash it via the BOOTSEL mode, you need elf2uf2-rs: cargo install elf2uf2-rs To build the firmware to flash it with the BOOTSEL mode, from the firmware folder run: cargo build --release elf2uf2-rs ./target/thumbv6m-none-eabi/release/ep-vario-firmware ep-vario-firmware.uf2 With the EPVario turned off, connect it to your computer using a USB-C cable. Hold the Up button and press and hold the power button for 2 seconds. A mass storage device should show up on your computer. Drag and drop the ep-vario-firmware.uf2 file that was just created to the device. It will automatically dismount the device and install the firmware.">
 
       
     
@@ -88,8 +106,8 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/" title="About page">
-              About
+            <a class="hover-white white-90 no-underline" href="/firmware/" title="Firmware page">
+              Firmware
             </a>
           </li>
           
@@ -106,8 +124,8 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/firmware/" title="Firmware page">
-              Firmware
+            <a class="hover-white white-90 no-underline" href="/software/" title="Software page">
+              Software
             </a>
           </li>
           
@@ -118,8 +136,8 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/software/" title="Software page">
-              Software
+            <a class="hover-white white-90 no-underline" href="/" title=" page">
+              
             </a>
           </li>
           
@@ -144,7 +162,7 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
     <header class="mt4 w-100">
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
-        About
+        
       </aside><div id="sharing" class="mt3 ananke-socials"></div>
 <h1 class="f1 athelas mt3 mb1">Software</h1>
       
@@ -169,6 +187,24 @@ Flight and Landing detection, Flighttimer and Post-Flight Statistics
 <li>FAI CIVL approved IGC tracklog signing (G-record)</li>
 <li>Flight and Landing detection, Flighttimer and Post-Flight Statistics</li>
 </ul>
+<h3 id="developer-quickstart">Developer quickstart:</h3>
+<ol>
+<li>Install the Rust toolchain using <strong>rustup</strong>: <a href="https://rustup.rs/">https://rustup.rs/</a>.</li>
+<li>Install the nightly toolchain and add the target to build for the RP2040:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rustup toolchain install nightly
+</span></span><span style="display:flex;"><span>rustup target add thumbv6m-none-eabi
+</span></span></code></pre></div><ol start="3">
+<li>To build the firmware to flash it via the BOOTSEL mode, you need <a href="https://crates.io/crates/elf2uf2-rs"><code>elf2uf2-rs</code></a>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo install elf2uf2-rs
+</span></span></code></pre></div><ol start="4">
+<li>To build the firmware to flash it with the BOOTSEL mode, from the <code>firmware</code> folder run:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo build --release
+</span></span><span style="display:flex;"><span>elf2uf2-rs ./target/thumbv6m-none-eabi/release/ep-vario-firmware ep-vario-firmware.uf2 
+</span></span></code></pre></div><blockquote>
+<p>With the EPVario turned off, connect it to your computer using a USB-C cable. Hold the Up button and press and hold the power button for 2 seconds. A mass storage device should show up on your computer. Drag and drop the <code>ep-vario-firmware.uf2</code> file that was just created to the device. It will automatically dismount the device and install the firmware.</p></blockquote>
 <ul class="pa0">
   
 </ul>
