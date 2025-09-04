@@ -6,7 +6,8 @@
     
     <title>Configurator | EPVario - open Source Paragliding Variometer</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Prepare and download your config file and save it to the Vario SD card:
+    <meta name="description" content="use with v0.1.3RC10
+Prepare and download your config file and save it to the Vario SD card:
 
 
   
@@ -39,6 +40,13 @@ Pilot Name:
     
   
 
+  Flight Layout:
+    
+      Default
+      Numbers
+    
+  
+
   Display Version (1 to 3):
     
   
@@ -60,7 +68,11 @@ Pilot Name:
   Download Config
 
 
-  ">
+  
+
+
+
+">
     <meta name="generator" content="Hugo 0.149.0">
     
     
@@ -92,23 +104,23 @@ Pilot Name:
     <meta property="og:url" content="https://epvario.github.io/configurator/">
   <meta property="og:site_name" content="EPVario - open Source Paragliding Variometer">
   <meta property="og:title" content="Configurator">
-  <meta property="og:description" content="Prepare and download your config file and save it to the Vario SD card:
-Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
+  <meta property="og:description" content="use with v0.1.3RC10
+Prepare and download your config file and save it to the Vario SD card: Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Flight Layout: Default Numbers Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-09-02T08:00:20+02:00">
-    <meta property="article:modified_time" content="2025-09-02T08:00:20+02:00">
+    <meta property="article:published_time" content="2025-09-04T08:00:20+02:00">
+    <meta property="article:modified_time" content="2025-09-04T08:00:20+02:00">
 
   <meta itemprop="name" content="Configurator">
-  <meta itemprop="description" content="Prepare and download your config file and save it to the Vario SD card:
-Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
-  <meta itemprop="datePublished" content="2025-09-02T08:00:20+02:00">
-  <meta itemprop="dateModified" content="2025-09-02T08:00:20+02:00">
-  <meta itemprop="wordCount" content="46">
+  <meta itemprop="description" content="use with v0.1.3RC10
+Prepare and download your config file and save it to the Vario SD card: Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Flight Layout: Default Numbers Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
+  <meta itemprop="datePublished" content="2025-09-04T08:00:20+02:00">
+  <meta itemprop="dateModified" content="2025-09-04T08:00:20+02:00">
+  <meta itemprop="wordCount" content="53">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Configurator">
-  <meta name="twitter:description" content="Prepare and download your config file and save it to the Vario SD card:
-Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
+  <meta name="twitter:description" content="use with v0.1.3RC10
+Prepare and download your config file and save it to the Vario SD card: Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offset: -0200 -0100 0000 &#43;0100 &#43;0200 Flight Layout: Default Numbers Display Version (1 to 3): Climb Threshold: Sink Threshold: Shutdown Information: Download Config">
 
       
     
@@ -162,12 +174,6 @@ Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offs
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/software/" title="Code page">
-              Code
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/hardware/" title="Hardware page">
               Hardware
             </a>
@@ -209,13 +215,14 @@ Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offs
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2025-09-02T08:00:20+02:00">September 2, 2025</time>
+      <time class="f6 mv4 dib tracked" datetime="2025-09-04T08:00:20+02:00">September 4, 2025</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Prepare and download your config file and save it to the Vario SD card:</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>use with v0.1.3RC10</strong></p>
+<p>Prepare and download your config file and save it to the Vario SD card:
 
 
   <style>
@@ -258,6 +265,13 @@ Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offs
     </select>
   </label>
 
+  <label>Flight Layout:
+    <select id="flight_layout">
+      <option selected>Default</option>
+      <option>Numbers</option>
+    </select>
+  </label>
+
   <label>Display Version (1 to 3):
     <input type="number" id="display_version" min="1" max="3" value="1" />
   </label>
@@ -286,6 +300,7 @@ Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offs
         glider_type: document.getElementById('glider_type').value,
         startup_volume: document.getElementById('startup_volume').value,
         utc_time_offset: document.getElementById('utc_time_offset').value,
+        flight_layout: document.getElementById('flight_layout').value,
 
         climb_threshold: Number (parseFloat( document.getElementById('climb_threshold').value).toFixed(1)) ,
         sink_threshold: Number (parseFloat( document.getElementById('sink_threshold').value).toFixed(1)) ,
@@ -308,7 +323,7 @@ Pilot Name: Glider Type: Startup Volume: Mute Low Medium High Full UTC Time Offs
 
 
 
-
+</p>
 <ul class="pa0">
   
 </ul>

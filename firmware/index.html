@@ -6,7 +6,17 @@
     
     <title>Firmware | EPVario - open Source Paragliding Variometer</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="v0.1.3(RC9) download
+    <meta name="description" content="v0.1.3(RC10) download
+
+shutdown screen points to this site
+new: widget altitude gain, which displays difference to 30sec ago
+new: configurable Flight Screen (Default/Numbers)
+new configuration elements:
+
+
+&#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;,
+
+v0.1.3(RC9) download
 
 rebased on master b8361b2
 improve config deserialization
@@ -22,20 +32,7 @@ new configuration elements:
 &#34;climb_threshold&#34;: 0.2,
 &#34;sink_threshold&#34;: -2.0, 
 
-v0.1.3(RC7)
-
-change: wind direction symbol is a full arrow now
-fix: AGL
-
-v0.1.3(RC4)
-
-new: adding SRTM elevation data to calculate and display AGL altitude
-change: new display layout
-change: removed decimal on horizontal speed
-fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2()
-fix: limit IGC handler to write BRecords once per second
-
-v0.1.2">
+v0.1.3(RC7)">
     <meta name="generator" content="Hugo 0.149.0">
     
     
@@ -67,29 +64,26 @@ v0.1.2">
     <meta property="og:url" content="https://epvario.github.io/firmware/">
   <meta property="og:site_name" content="EPVario - open Source Paragliding Variometer">
   <meta property="og:title" content="Firmware">
-  <meta property="og:description" content="v0.1.3(RC9) download
-rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)
-change: wind direction symbol is a full arrow now fix: AGL v0.1.3(RC4)
-new: adding SRTM elevation data to calculate and display AGL altitude change: new display layout change: removed decimal on horizontal speed fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2() fix: limit IGC handler to write BRecords once per second v0.1.2">
+  <meta property="og:description" content="v0.1.3(RC10) download
+shutdown screen points to this site new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
+rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-09-02T07:35:17+02:00">
-    <meta property="article:modified_time" content="2025-09-02T07:35:17+02:00">
+    <meta property="article:published_time" content="2025-09-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-04T00:00:00+00:00">
 
   <meta itemprop="name" content="Firmware">
-  <meta itemprop="description" content="v0.1.3(RC9) download
-rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)
-change: wind direction symbol is a full arrow now fix: AGL v0.1.3(RC4)
-new: adding SRTM elevation data to calculate and display AGL altitude change: new display layout change: removed decimal on horizontal speed fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2() fix: limit IGC handler to write BRecords once per second v0.1.2">
-  <meta itemprop="datePublished" content="2025-09-02T07:35:17+02:00">
-  <meta itemprop="dateModified" content="2025-09-02T07:35:17+02:00">
-  <meta itemprop="wordCount" content="171">
+  <meta itemprop="description" content="v0.1.3(RC10) download
+shutdown screen points to this site new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
+rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
+  <meta itemprop="datePublished" content="2025-09-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="199">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Firmware">
-  <meta name="twitter:description" content="v0.1.3(RC9) download
-rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)
-change: wind direction symbol is a full arrow now fix: AGL v0.1.3(RC4)
-new: adding SRTM elevation data to calculate and display AGL altitude change: new display layout change: removed decimal on horizontal speed fix: improve wind estimator by using vel_north, vel_east, vector magnitude and atan2() fix: limit IGC handler to write BRecords once per second v0.1.2">
+  <meta name="twitter:description" content="v0.1.3(RC10) download
+shutdown screen points to this site new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
+rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
 
       
     
@@ -143,12 +137,6 @@ new: adding SRTM elevation data to calculate and display AGL altitude change: ne
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/software/" title="Code page">
-              Code
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/hardware/" title="Hardware page">
               Hardware
             </a>
@@ -190,13 +178,23 @@ new: adding SRTM elevation data to calculate and display AGL altitude change: ne
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2025-09-02T07:35:17+02:00">September 2, 2025</time>
+      <time class="f6 mv4 dib tracked" datetime="2025-09-04T00:00:00Z">September 4, 2025</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>v0.1.3(RC9) <a href="/firmware/epvario_v0.1.3-RC9_01faa08.uf2">download</a></p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>v0.1.3(RC10) <a href="/firmware/epvario_v0.1.3-RC10_82e895f.uf2">download</a></p>
+<ul>
+<li>shutdown screen points to this site</li>
+<li>new: widget altitude gain, which displays difference to 30sec ago</li>
+<li>new: configurable Flight Screen (Default/Numbers)</li>
+<li>new configuration elements:</li>
+</ul>
+<blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#34;flight_layout&#34;</span>: <span style="color:#e6db74">&#34;[Default|Numbers]&#34;</span>,
+</span></span></code></pre></div></blockquote>
+<p>v0.1.3(RC9) <a href="/firmware/epvario_v0.1.3-RC9_01faa08.uf2">download</a></p>
 <ul>
 <li>rebased on master b8361b2</li>
 <li>improve config deserialization</li>
