@@ -50,7 +50,7 @@
 <body>
     <div id="map"></div>
     
-    <div class="info-panel">
+    <!-- <div class="info-panel">
         <h3>EPVario - Elevation Data Coverage</h3>
         <div id="selected-info">Click on a rectangle to download</div>
         <div class="legend">
@@ -63,7 +63,7 @@
                 <span>E010-019 (Eastern block)</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -77,46 +77,46 @@
 
         // Define the zip files and their coverage areas
         const zipFiles = [
-            { name: 'agl/N41E000-009.zip', latStart: 41, latEnd: 42, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N41E010-019.zip', latStart: 41, latEnd: 42, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N42E000-009.zip', latStart: 42, latEnd: 43, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N42E010-019.zip', latStart: 42, latEnd: 43, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N43E000-009.zip', latStart: 43, latEnd: 44, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N43E010-019.zip', latStart: 43, latEnd: 44, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N44E000-009.zip', latStart: 44, latEnd: 45, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N44E010-019.zip', latStart: 44, latEnd: 45, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N45E000-009.zip', latStart: 45, latEnd: 46, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N45E010-019.zip', latStart: 45, latEnd: 46, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N46E000-009.zip', latStart: 46, latEnd: 47, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N46E010-019.zip', latStart: 46, latEnd: 47, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N47E000-009.zip', latStart: 47, latEnd: 48, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N47E010-019.zip', latStart: 47, latEnd: 48, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N48E000-009.zip', latStart: 48, latEnd: 49, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N48E010-019.zip', latStart: 48, latEnd: 49, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N49E000-009.zip', latStart: 49, latEnd: 50, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N49E010-019.zip', latStart: 49, latEnd: 50, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N50E000-009.zip', latStart: 50, latEnd: 51, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N50E010-019.zip', latStart: 50, latEnd: 51, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N51E000-009.zip', latStart: 51, latEnd: 52, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N51E010-019.zip', latStart: 51, latEnd: 52, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N52E000-009.zip', latStart: 52, latEnd: 53, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N52E010-019.zip', latStart: 52, latEnd: 53, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N53E000-009.zip', latStart: 53, latEnd: 54, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N53E010-019.zip', latStart: 53, latEnd: 54, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N54E000-009.zip', latStart: 54, latEnd: 55, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N54E010-019.zip', latStart: 54, latEnd: 55, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N55E000-009.zip', latStart: 55, latEnd: 56, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N55E010-019.zip', latStart: 55, latEnd: 56, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N56E000-009.zip', latStart: 56, latEnd: 57, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N56E010-019.zip', latStart: 56, latEnd: 57, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N57E000-009.zip', latStart: 57, latEnd: 58, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N57E010-019.zip', latStart: 57, latEnd: 58, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N58E000-009.zip', latStart: 58, latEnd: 59, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N58E010-019.zip', latStart: 58, latEnd: 59, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N59E000-009.zip', latStart: 59, latEnd: 60, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N59E010-019.zip', latStart: 59, latEnd: 60, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'agl/N60E000-009.zip', latStart: 60, latEnd: 61, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'agl/N60E010-019.zip', latStart: 60, latEnd: 61, lonStart: 10, lonEnd: 20, type: 'eastern' }
+            { name: '/agl/N41E000-009.zip', latStart: 41, latEnd: 42, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N41E010-019.zip', latStart: 41, latEnd: 42, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N42E000-009.zip', latStart: 42, latEnd: 43, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N42E010-019.zip', latStart: 42, latEnd: 43, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N43E000-009.zip', latStart: 43, latEnd: 44, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N43E010-019.zip', latStart: 43, latEnd: 44, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N44E000-009.zip', latStart: 44, latEnd: 45, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N44E010-019.zip', latStart: 44, latEnd: 45, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N45E000-009.zip', latStart: 45, latEnd: 46, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N45E010-019.zip', latStart: 45, latEnd: 46, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N46E000-009.zip', latStart: 46, latEnd: 47, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N46E010-019.zip', latStart: 46, latEnd: 47, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N47E000-009.zip', latStart: 47, latEnd: 48, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N47E010-019.zip', latStart: 47, latEnd: 48, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N48E000-009.zip', latStart: 48, latEnd: 49, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N48E010-019.zip', latStart: 48, latEnd: 49, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N49E000-009.zip', latStart: 49, latEnd: 50, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N49E010-019.zip', latStart: 49, latEnd: 50, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N50E000-009.zip', latStart: 50, latEnd: 51, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N50E010-019.zip', latStart: 50, latEnd: 51, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N51E000-009.zip', latStart: 51, latEnd: 52, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N51E010-019.zip', latStart: 51, latEnd: 52, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N52E000-009.zip', latStart: 52, latEnd: 53, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N52E010-019.zip', latStart: 52, latEnd: 53, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N53E000-009.zip', latStart: 53, latEnd: 54, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N53E010-019.zip', latStart: 53, latEnd: 54, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N54E000-009.zip', latStart: 54, latEnd: 55, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N54E010-019.zip', latStart: 54, latEnd: 55, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N55E000-009.zip', latStart: 55, latEnd: 56, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N55E010-019.zip', latStart: 55, latEnd: 56, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N56E000-009.zip', latStart: 56, latEnd: 57, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N56E010-019.zip', latStart: 56, latEnd: 57, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N57E000-009.zip', latStart: 57, latEnd: 58, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N57E010-019.zip', latStart: 57, latEnd: 58, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N58E000-009.zip', latStart: 58, latEnd: 59, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N58E010-019.zip', latStart: 58, latEnd: 59, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N59E000-009.zip', latStart: 59, latEnd: 60, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N59E010-019.zip', latStart: 59, latEnd: 60, lonStart: 10, lonEnd: 20, type: 'eastern' },
+            { name: '/agl/N60E000-009.zip', latStart: 60, latEnd: 61, lonStart: 0, lonEnd: 10, type: 'western' },
+            { name: '/agl/N60E010-019.zip', latStart: 60, latEnd: 61, lonStart: 10, lonEnd: 20, type: 'eastern' }
         ];
 
         // Function to get color based on type
