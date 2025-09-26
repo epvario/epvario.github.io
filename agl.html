@@ -70,11 +70,15 @@
         <div class="legend">
             <div class="legend-item">
                 <div class="legend-color" style="background-color: rgba(255, 0, 0, 0.3);"></div>
-                <span>E000-009 (Western block)</span>
+                <span>E000-009 (Eastern positive)</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color" style="background-color: rgba(0, 0, 255, 0.3);"></div>
-                <span>E010-019 (Eastern block)</span>
+                <span>E010-019 (Eastern positive)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(0, 255, 0, 0.3);"></div>
+                <span>W000-019 (Western negative)</span>
             </div>
         </div>
     </div>
@@ -89,57 +93,129 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Define the zip files and their coverage areas
-        const zipFiles = [
-            { name: 'N41E000-009.zip', latStart: 41, latEnd: 42, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N41E010-019.zip', latStart: 41, latEnd: 42, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N42E000-009.zip', latStart: 42, latEnd: 43, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N42E010-019.zip', latStart: 42, latEnd: 43, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N43E000-009.zip', latStart: 43, latEnd: 44, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N43E010-019.zip', latStart: 43, latEnd: 44, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N44E000-009.zip', latStart: 44, latEnd: 45, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N44E010-019.zip', latStart: 44, latEnd: 45, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N45E000-009.zip', latStart: 45, latEnd: 46, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N45E010-019.zip', latStart: 45, latEnd: 46, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N46E000-009.zip', latStart: 46, latEnd: 47, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N46E010-019.zip', latStart: 46, latEnd: 47, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N47E000-009.zip', latStart: 47, latEnd: 48, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N47E010-019.zip', latStart: 47, latEnd: 48, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N48E000-009.zip', latStart: 48, latEnd: 49, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N48E010-019.zip', latStart: 48, latEnd: 49, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N49E000-009.zip', latStart: 49, latEnd: 50, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N49E010-019.zip', latStart: 49, latEnd: 50, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N50E000-009.zip', latStart: 50, latEnd: 51, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N50E010-019.zip', latStart: 50, latEnd: 51, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N51E000-009.zip', latStart: 51, latEnd: 52, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N51E010-019.zip', latStart: 51, latEnd: 52, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N52E000-009.zip', latStart: 52, latEnd: 53, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N52E010-019.zip', latStart: 52, latEnd: 53, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N53E000-009.zip', latStart: 53, latEnd: 54, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N53E010-019.zip', latStart: 53, latEnd: 54, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N54E000-009.zip', latStart: 54, latEnd: 55, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N54E010-019.zip', latStart: 54, latEnd: 55, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N55E000-009.zip', latStart: 55, latEnd: 56, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N55E010-019.zip', latStart: 55, latEnd: 56, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N56E000-009.zip', latStart: 56, latEnd: 57, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N56E010-019.zip', latStart: 56, latEnd: 57, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N57E000-009.zip', latStart: 57, latEnd: 58, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N57E010-019.zip', latStart: 57, latEnd: 58, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N58E000-009.zip', latStart: 58, latEnd: 59, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N58E010-019.zip', latStart: 58, latEnd: 59, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N59E000-009.zip', latStart: 59, latEnd: 60, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N59E010-019.zip', latStart: 59, latEnd: 60, lonStart: 10, lonEnd: 20, type: 'eastern' },
-            { name: 'N60E000-009.zip', latStart: 60, latEnd: 61, lonStart: 0, lonEnd: 10, type: 'western' },
-            { name: 'N60E010-019.zip', latStart: 60, latEnd: 61, lonStart: 10, lonEnd: 20, type: 'eastern' }
+        // List of available zip files
+        const zipFileNames = [
+            'N41E000-009.zip', 'N41E010-019.zip',
+            'N42E000-009.zip', 'N42E010-019.zip',
+            'N43E000-009.zip', 'N43E010-019.zip',
+            'N44E000-009.zip', 'N44E010-019.zip',
+            'N45E000-009.zip', 'N45E010-019.zip',
+            'N46E000-009.zip', 'N46E010-019.zip',
+            'N47E000-009.zip', 'N47E010-019.zip',
+            'N48E000-009.zip', 'N48E010-019.zip',
+            'N49E000-009.zip', 'N49E010-019.zip',
+            'N50E000-009.zip', 'N50E010-019.zip',
+            'N51E000-009.zip', 'N51E010-019.zip',
+            'N52E000-009.zip', 'N52E010-019.zip',
+            'N53E000-009.zip', 'N53E010-019.zip',
+            'N54E000-009.zip', 'N54E010-019.zip',
+            'N55E000-009.zip', 'N55E010-019.zip',
+            'N56E000-009.zip', 'N56E010-019.zip',
+            'N57E000-009.zip', 'N57E010-019.zip',
+            'N58E000-009.zip', 'N58E010-019.zip',
+            'N59E000-009.zip', 'N59E010-019.zip',
+            'N60E000-009.zip', 'N60E010-019.zip',
+'N31E010-019.zip', 
+'N33E010-019.zip', 
+'N36E010-019.zip',
+    
+'N41W000-009.zip',
+'N45W000-009.zip',
+'N31W000-009.zip', 
+'N33W000-009.zip', 
+'N36W000-009.zip',
+'N39E010-019.zip', 
+'N42W000-009.zip',
+'N46W000-009.zip',
+    
+'N34E010-019.zip', 
+'N37E010-019.zip',
+'N39W000-009.zip', 
+    
+'N47W000-009.zip',
+'N32E010-019.zip', 
+'N34W000-009.zip', 
+'N37W000-009.zip',
+    
+'N43W000-009.zip',
+'N48W000-009.zip',
+'N32W000-009.zip', 
+'N35E010-019.zip', 
+'N38E010-019.zip',
+'N40E010-019.zip',     
+'N49W000-009.zip',
+'N35W000-009.zip', 
+'N38W000-009.zip',
+'N40W000-009.zip', 
+'N44W000-009.zip',
+'N50W000-009.zip',
+
         ];
+
+        // Function to parse filename and extract coordinates
+        function parseZipFileName(filename) {
+            // Pattern: N{lat}[E|W]{lonStart}-{lonEnd}.zip
+            const match = filename.match(/^N(\d+)([EW])(\d+)-(\d+)\.zip$/);
+            if (!match) {
+                console.error('Invalid filename pattern:', filename);
+                return null;
+            }
+
+            const lat = parseInt(match[1]);
+            const hemisphere = match[2]; // 'E' or 'W'
+            const lonStart = parseInt(match[3]);
+            const lonEnd = parseInt(match[4]);
+
+            // Convert to actual longitude values
+            let actualLonStart, actualLonEnd;
+            if (hemisphere === 'W') {
+                // West coordinates are negative
+                actualLonStart = -(lonEnd + 1);  // W010-019 means -20 to -11
+                actualLonEnd = -lonStart;
+            } else {
+                // East coordinates are positive
+                actualLonStart = lonStart;
+                actualLonEnd = lonEnd + 1;
+            }
+
+            // Determine type based on hemisphere and range
+            let type;
+            if (hemisphere === 'W') {
+                type = 'western_negative';
+            } else {
+                type = lonStart < 10 ? 'western' : 'eastern';
+            }
+
+            return {
+                name: filename,
+                latStart: lat,
+                latEnd: lat + 1,  // Each file covers 1 degree latitude
+                lonStart: actualLonStart,
+                lonEnd: actualLonEnd,
+                type: type
+            };
+        }
+
+        // Generate zip files array dynamically
+        const zipFiles = zipFileNames.map(parseZipFileName).filter(file => file !== null);
 
         // Function to get color based on type
         function getColor(type) {
-            return type === 'western' ? 'rgba(255, 0, 0, 0.3)' : 'rgba(0, 0, 255, 0.3)';
+            switch(type) {
+                case 'western': return 'rgba(255, 0, 0, 0.3)';           // Red for E000-009
+                case 'eastern': return 'rgba(0, 0, 255, 0.3)';           // Blue for E010-019
+                case 'western_negative': return 'rgba(0, 255, 0, 0.3)';  // Green for W coordinates
+                default: return 'rgba(128, 128, 128, 0.3)';              // Gray fallback
+            }
         }
 
         function getBorderColor(type) {
-            return type === 'western' ? '#ff0000' : '#0000ff';
+            switch(type) {
+                case 'western': return '#ff0000';           // Red for E000-009
+                case 'eastern': return '#0000ff';           // Blue for E010-019
+                case 'western_negative': return '#00ff00';  // Green for W coordinates
+                default: return '#808080';                  // Gray fallback
+            }
         }
 
         // Add rectangles for each zip file
