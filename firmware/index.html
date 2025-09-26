@@ -6,7 +6,12 @@
     
     <title>Firmware | EPVario - open Source Paragliding Variometer</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="v0.1.3(RC11) download
+    <meta name="description" content="v0.1.3(RC12) download
+
+fix: finalized the display driver (no ghosting, fadeout, smeirs)
+removed config element:  &ldquo;display_version&rdquo;: 1
+
+v0.1.3(RC11) download
 
 fix: sporadic hickups after landing before stats screen
 fix: randomly no config loaded
@@ -70,26 +75,29 @@ v0.1.3(RC7)">
     <meta property="og:url" content="https://epvario.github.io/firmware/">
   <meta property="og:site_name" content="EPVario - open Source Paragliding Variometer">
   <meta property="og:title" content="Firmware">
-  <meta property="og:description" content="v0.1.3(RC11) download
+  <meta property="og:description" content="v0.1.3(RC12) download
+fix: finalized the display driver (no ghosting, fadeout, smeirs) removed config element: “display_version”: 1 v0.1.3(RC11) download
 fix: sporadic hickups after landing before stats screen fix: randomly no config loaded fix: wind estimator pointing wrong at certain heading reduce GPS update rate to 5Hz v0.1.3(RC10) download
 new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
 rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2025-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-09-18T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-09-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-26T00:00:00+00:00">
 
   <meta itemprop="name" content="Firmware">
-  <meta itemprop="description" content="v0.1.3(RC11) download
+  <meta itemprop="description" content="v0.1.3(RC12) download
+fix: finalized the display driver (no ghosting, fadeout, smeirs) removed config element: “display_version”: 1 v0.1.3(RC11) download
 fix: sporadic hickups after landing before stats screen fix: randomly no config loaded fix: wind estimator pointing wrong at certain heading reduce GPS update rate to 5Hz v0.1.3(RC10) download
 new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
 rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
-  <meta itemprop="datePublished" content="2025-09-18T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-09-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="222">
+  <meta itemprop="datePublished" content="2025-09-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-26T00:00:00+00:00">
+  <meta itemprop="wordCount" content="238">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Firmware">
-  <meta name="twitter:description" content="v0.1.3(RC11) download
+  <meta name="twitter:description" content="v0.1.3(RC12) download
+fix: finalized the display driver (no ghosting, fadeout, smeirs) removed config element: “display_version”: 1 v0.1.3(RC11) download
 fix: sporadic hickups after landing before stats screen fix: randomly no config loaded fix: wind estimator pointing wrong at certain heading reduce GPS update rate to 5Hz v0.1.3(RC10) download
 new: widget altitude gain, which displays difference to 30sec ago new: configurable Flight Screen (Default/Numbers) new configuration elements: &#34;flight_layout&#34;: &#34;[Default|Numbers]&#34;, v0.1.3(RC9) download
 rebased on master b8361b2 improve config deserialization synchronize-igc-record-ticker fix: changed windspeed algorithm (increased prediction by ~40- new: optional, configurable shutdown screen to show Owner Details new: Temperature based LUT selection to reduce ghosting and washout new: configurable vario thresholds (defaults: 0.2m/s und -2.0m/s) new configuration elements: &#34;shutdown_information&#34;: &#34;&lt;optional text&gt;&#34;, &#34;climb_threshold&#34;: 0.2, &#34;sink_threshold&#34;: -2.0, v0.1.3(RC7)">
@@ -193,13 +201,18 @@ rebased on master b8361b2 improve config deserialization synchronize-igc-record-
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2025-09-18T00:00:00Z">September 18, 2025</time>
+      <time class="f6 mv4 dib tracked" datetime="2025-09-26T00:00:00Z">September 26, 2025</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>v0.1.3(RC11) <a href="/firmware/epvario_v0.1.3-RC11_b3564cc.uf2">download</a></p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>v0.1.3(RC12) <a href="/firmware/epvario_v0.1.3-RC12_68d87af.uf2">download</a></p>
+<ul>
+<li>fix: finalized the display driver (no ghosting, fadeout, smeirs)</li>
+<li><strong>removed</strong> config element:  <del>&ldquo;display_version&rdquo;: 1</del></li>
+</ul>
+<p>v0.1.3(RC11) <a href="/firmware/epvario_v0.1.3-RC11_b3564cc.uf2">download</a></p>
 <ul>
 <li>fix: sporadic hickups after landing before stats screen</li>
 <li>fix: randomly no config loaded</li>
