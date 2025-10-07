@@ -129,7 +129,30 @@
             'N34E010-019.zip', 'N40E010-019.zip',      
             'N37E010-019.zip', 'N49W000-009.zip',
             'N38W000-009.zip', 'N40W000-009.zip',             
-            'N44W000-009.zip', 'N50W000-009.zip',            
+            'N44W000-009.zip', 'N50W000-009.zip',       
+
+            // 'N21W000-009.zip', 
+            'N22W010-019.zip', 
+            // 'N24W000-009.zip', 
+            'N25W010-019.zip',
+            'N27W000-009.zip', 
+            'N28W010-019.zip', 
+            'N30W000-009.zip',
+            'N21W010-019.zip', 
+            // 'N23W000-009.zip', 
+            'N24W010-019.zip',
+            // 'N26W000-009.zip',
+            'N27W010-019.zip', 
+            'N29W000-009.zip', 
+            'N30W010-019.zip',
+            // 'N22W000-009.zip', 
+            'N23W010-019.zip', 
+            // 'N25W000-009.zip', 
+            'N26W010-019.zip',
+            'N28W000-009.zip', 
+            'N29W010-019.zip',
+
+ 
         ];
 
         // Function to parse filename and extract coordinates
@@ -143,15 +166,15 @@
 
             const lat = parseInt(match[1]);
             const hemisphere = match[2]; // 'E' or 'W'
-            const lonStart = parseInt(match[3]);
-            const lonEnd = parseInt(match[4]);
+            const lonStart = parseInt(match[3]);    // 000 or 010
+            const lonEnd = parseInt(match[4]);      // 009 or 019
 
             // Convert to actual longitude values
             let actualLonStart, actualLonEnd;
-            if (hemisphere === 'W') {
-                // West coordinates are negative
-                actualLonStart = -(lonEnd + 1);  // W010-019 means -20 to -11
+            if (hemisphere === 'W') {    
+              actualLonStart = -(lonEnd + 1);  // W010-019 means -20 to -10
                 actualLonEnd = -lonStart;
+
             } else {
                 // East coordinates are positive
                 actualLonStart = lonStart;
