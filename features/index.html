@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+        
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @font-face {
+            font-family: "Pretendard-Regular";
+            src: url('https://epvario.github.io/fonts/Pretendard-Regular.woff') format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+        body {
+            font-family: "Pretendard-Regular", sans-serif;
+        }
+    </style>
+
+    
+        
+            <meta name="description" content="Advanced software features and algorithms in EPVario firmware" />
+        
+    
+
+    <title>Software Features | EPV - Open Source Vario</title>
+
+    
+    
+
+      <!-- SEO: Open Graph / Twitter Card -->
+      <meta property="og:title" content="Software Features | EPV - Open Source Vario" />
+      <meta property="og:description" content="Advanced software features and algorithms in EPVario firmware" />
+      <meta property="og:url" content="https://epvario.github.io" />
+      <meta property="og:type" content="website" />
+      
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Software Features" />
+      <meta name="twitter:description" content="Advanced software features and algorithms in EPVario firmware" />
+      
+      
+      
+
+      <!-- CSS -->
+    <link rel="stylesheet" href="https://epvario.github.io/css/main.css">
+    <link rel="stylesheet" href="https://epvario.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://epvario.github.io/css/katex.min.css">
+
+    <script src="https://epvario.github.io/js/mermaid.min.js"></script>
+    <script src="https://epvario.github.io/js/katex.min.js"></script>
+    <script src="https://epvario.github.io/js/copy_code.js"></script>
+    <script src="https://epvario.github.io/js/copy_heading_link.js"></script>
+
+    
+    
+</head>
+<body>
+    
+
+
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col pt-16">
+            
+<div class="navbar opacity-95 fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-500/15 backdrop-blur-3xl">
+    <!-- Mobile hamburger -->
+    <div class="flex-none lg:hidden">
+        <label for="my-drawer-2" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </label>
+    </div>
+    <!-- Logo -->
+    <div class="flex-1">
+        <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
+            
+                <img src="https://epvario.github.io/images/epvario_logo.png" alt="EPV" class="h-18 w-auto" style="padding: 5px;"/>
+            
+        </a>
+    </div>
+    <!-- Desktop Menu -->
+    <div class="flex-none hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 items-center">
+            
+            
+            
+                
+                    
+                        <li>
+                            <a class="btn btn-ghost hover:no-underline" href="/introduction">
+                                <i class="fa-solid fa-info-circle"></i>
+                                Introduction
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a class="btn btn-ghost hover:no-underline" href="/features">
+                                <i class="fa-solid fa-star"></i>
+                                Features
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a class="btn btn-ghost hover:no-underline" href="/usage">
+                                <i class="fa-solid fa-power-off"></i>
+                                Usage
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a class="btn btn-ghost hover:no-underline" href="/downloads">
+                                <i class="fa-solid fa-download"></i>
+                                Downloads
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a class="btn btn-ghost hover:no-underline" href="https://github.com/epvario">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                    
+                
+            
+            
+
+            
+            <li>
+                <label class="swap swap-rotate btn btn-ghost">
+                  <input type="checkbox" class="theme-controller" value="night" aria-labelledby="swap color"/>
+                  <svg class="swap-off h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" /></svg>
+                  <svg class="swap-on h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
+                </label>
+            </li>
+            
+
+        </ul>
+    </div>
+</div>
+
+
+            
+            
+            <div class="p-8 w-full max-w-7xl mx-auto lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
+                <main class="prose w-full max-w-7xl mx-auto">
+            
+                    
+    <div class="mb-12 pb-4 border-b border-gray-500/15">
+        <h1>Software Features</h1>
+        <p class="text-gray-500">Advanced software features and algorithms in EPVario firmware</p>
+    </div>
+    <h1 id="software-features">Software Features</h1>
+<p>EPVario's firmware is built with cutting-edge algorithms and modern embedded programming techniques to deliver professional-grade variometer functionality in a lightweight package.</p>
+<h2 id="core-flight-instruments">Core Flight Instruments</h2>
+<h3 id="real-time-variometer"><strong>Real-Time Variometer</strong></h3>
+<ul>
+<li><strong>Instant Response</strong>: &lt;100ms latency from pressure change to audio feedback</li>
+<li><strong>Sensitivity Control</strong>: Adjustable threshold for lift/sink detection</li>
+<li><strong>Audio Feedback</strong>: Multi-tone system with lift/sink indication</li>
+<li><strong>Visual Display</strong>: Large, clear vertical speed numbers</li>
+<li><strong>Filtering</strong>: Smart noise reduction while maintaining responsiveness</li>
+</ul>
+<h3 id="precision-altitude-tracking"><strong>Precision Altitude Tracking</strong></h3>
+<ul>
+<li><strong>Sensor Fusion</strong>: Advanced Kalman filter combines GPS and barometric data</li>
+<li><strong>Adaptive Filtering</strong>: VDOP-based GPS trust adjustment</li>
+<li><strong>MSL Accuracy</strong>: Mean Sea Level altitude with ±1m typical accuracy</li>
+<li><strong>QNH Support</strong>: Manual pressure setting for airport reference</li>
+<li><strong>Altitude Graphs</strong>: Historical altitude tracking and display</li>
+</ul>
+<h3 id="advanced-wind-estimation"><strong>Advanced Wind Estimation</strong></h3>
+<p>Our sophisticated wind estimation system analyzes your flight path to calculate wind conditions:</p>
+<h4 id="circle-fitting-algorithm"><strong>Circle-Fitting Algorithm</strong></h4>
+<ul>
+<li><strong>Real-Time Analysis</strong>: Processes GPS tracks during thermal flight</li>
+<li><strong>Statistical Method</strong>: Least-squares optimization for accurate results</li>
+<li><strong>Multi-Sector Sampling</strong>: 6 samples per 60° sector for comprehensive data</li>
+<li><strong>Gradient Descent</strong>: Iterative optimization for precise wind vector calculation</li>
+</ul>
+<h4 id="wind-display"><strong>Wind Display</strong></h4>
+<ul>
+<li><strong>Speed &amp; Direction</strong>: Accurate wind speed (m/s) and direction (°)</li>
+<li><strong>Visual Compass</strong>: Wind arrow overlay on compass display</li>
+<li><strong>Thermal Optimization</strong>: Helps identify wind drift during climbs</li>
+<li><strong>Historical Data</strong>: Wind tracking throughout flight</li>
+</ul>
+<h2 id="navigation-safety-features">Navigation &amp; Safety Features</h2>
+<h3 id="altitude-above-ground-level-agl"><strong>Altitude Above Ground Level (AGL)</strong></h3>
+<ul>
+<li><strong>SRTM Integration</strong>: Uses NASA Shuttle Radar Topography Mission data</li>
+<li><strong>Automatic Tiles</strong>: Downloads elevation data as needed</li>
+<li><strong>Terrain Awareness</strong>: Critical for safe flying in mountainous terrain</li>
+<li><strong>Dynamic Updates</strong>: Real-time AGL calculation and display</li>
+</ul>
+<h3 id="digital-compass-with-wind-overlay"><strong>Digital Compass with Wind Overlay</strong></h3>
+<ul>
+<li><strong>Magnetic Heading</strong>: Calibrated compass with 1-2° accuracy</li>
+<li><strong>Wind Integration</strong>: Shows wind direction relative to heading</li>
+<li><strong>Course Tracking</strong>: Visual flight direction indicator</li>
+<li><strong>Automatic Calibration</strong>: Self-calibrating magnetic declination</li>
+</ul>
+<h3 id="gps-quality-monitoring"><strong>GPS Quality Monitoring</strong></h3>
+<p>EPVario implements sophisticated GPS quality assessment:</p>
+<h4 id="vdop-based-filtering"><strong>VDOP-Based Filtering</strong></h4>
+<ul>
+<li><strong>Quality Levels</strong>: Excellent (&lt;600mm), Good (&lt;1000mm), Poor (&gt;1000mm)</li>
+<li><strong>Adaptive Thresholds</strong>: Strict requirements during initialization, relaxed during flight</li>
+<li><strong>Counter System</strong>: 50-packet initialization ensures stable GPS lock</li>
+<li><strong>Real-Time Assessment</strong>: Continuous monitoring of satellite geometry</li>
+</ul>
+<h4 id="multi-constellation-support"><strong>Multi-Constellation Support</strong></h4>
+<ul>
+<li><strong>GPS</strong>: US Global Positioning System</li>
+<li><strong>GLONASS</strong>: Russian satellite navigation</li>
+<li><strong>Galileo</strong>: European satellite system</li>
+<li><strong>BeiDou</strong>: Chinese navigation system</li>
+<li><strong>SBAS</strong>: Satellite-Based Augmentation Systems</li>
+</ul>
+<h2 id="flight-data-analysis">Flight Data &amp; Analysis</h2>
+<h3 id="igc-flight-logging"><strong>IGC Flight Logging</strong></h3>
+<p>Professional competition-ready flight recording:</p>
+<h4 id="fai-civl-compliance"><strong>FAI CIVL Compliance</strong></h4>
+<ul>
+<li><strong>G-Record Security</strong>: Cryptographic verification of flight data</li>
+<li><strong>Competition Legal</strong>: Meets all requirements for FAI competitions</li>
+<li><strong>Data Integrity</strong>: Tamper-proof flight record format</li>
+<li><strong>Automatic Logging</strong>: No pilot intervention required</li>
+</ul>
+<h4 id="comprehensive-data"><strong>Comprehensive Data</strong></h4>
+<ul>
+<li><strong>3D Position</strong>: GPS coordinates with altitude</li>
+<li><strong>Time Stamps</strong>: Precise UTC timing for each point</li>
+<li><strong>Pressure Data</strong>: Barometric readings for verification</li>
+<li><strong>Sensor Status</strong>: GPS fix quality and satellite count</li>
+<li><strong>Event Markers</strong>: Takeoff, landing, and significant events</li>
+</ul>
+<h3 id="flight-statistics"><strong>Flight Statistics</strong></h3>
+<ul>
+<li><strong>Flight Time</strong>: Automatic takeoff/landing detection</li>
+<li><strong>Maximum Altitude</strong>: Highest point reached during flight</li>
+<li><strong>Total Distance</strong>: Ground track distance calculation</li>
+<li><strong>Average Speed</strong>: Flight performance metrics</li>
+<li><strong>Climb Analysis</strong>: Thermal performance statistics</li>
+</ul>
+<h3 id="real-time-performance-metrics"><strong>Real-Time Performance Metrics</strong></h3>
+<ul>
+<li><strong>Glide Ratio</strong>: Calculated from speed and vertical velocity</li>
+<li><strong>Horizontal Speed</strong>: GPS-derived ground speed with filtering</li>
+<li><strong>G-Force Monitoring</strong>: Acceleration display for flight envelope awareness</li>
+<li><strong>Battery Status</strong>: Continuous power level monitoring</li>
+</ul>
+<h2 id="advanced-algorithms">Advanced Algorithms</h2>
+<h3 id="kalman-filter-implementation"><strong>Kalman Filter Implementation</strong></h3>
+<p>Our altitude estimation uses a sophisticated 3-state Extended Kalman Filter:</p>
+<h4 id="state-vector"><strong>State Vector</strong></h4>
+<ul>
+<li><strong>Altitude</strong>: Current height above mean sea level</li>
+<li><strong>Vertical Velocity</strong>: Rate of climb/descent</li>
+<li><strong>MSL Pressure</strong>: Sea level pressure reference</li>
+</ul>
+<h4 id="sensor-fusion"><strong>Sensor Fusion</strong></h4>
+<ul>
+<li><strong>GPS Updates</strong>: Position measurements with accuracy weighting</li>
+<li><strong>Barometric Updates</strong>: Pressure measurements with temperature compensation</li>
+<li><strong>Process Model</strong>: Physical motion model with noise characteristics</li>
+<li><strong>VDOP Boosting</strong>: Up to 3x gain multiplication for excellent GPS quality</li>
+</ul>
+<h3 id="thermal-detection-intelligence"><strong>Thermal Detection Intelligence</strong></h3>
+<ul>
+<li><strong>Pattern Recognition</strong>: Identifies thermal entry and centering</li>
+<li><strong>Lift Mapping</strong>: Tracks lift strength across thermal diameter</li>
+<li><strong>Audio Optimization</strong>: Enhanced feedback during thermal flight</li>
+<li><strong>Visual Indicators</strong>: Clear lift/sink indication on display</li>
+</ul>
+<h3 id="power-management"><strong>Power Management</strong></h3>
+<ul>
+<li><strong>Task-Based Architecture</strong>: Independent power management per subsystem</li>
+<li><strong>Display Optimization</strong>: Partial updates minimize power consumption</li>
+<li><strong>GPS Power Control</strong>: Intelligent duty cycling for battery life</li>
+<li><strong>Sleep Modes</strong>: Automatic power reduction during inactivity</li>
+</ul>
+<h2 id="user-interface">User Interface</h2>
+<h3 id="display-layouts"><strong>Display Layouts</strong></h3>
+<p>Multiple screen configurations optimized for different flight phases:</p>
+<h4 id="default-layout"><strong>Default Layout</strong></h4>
+<ul>
+<li>Large variometer display with altitude</li>
+<li>Compass and wind information</li>
+<li>Speed and glide ratio</li>
+<li>Battery and GPS status</li>
+</ul>
+<h4 id="numbers-layout"><strong>Numbers Layout</strong></h4>
+<ul>
+<li>Maximum-size numeric displays</li>
+<li>Essential flight data only</li>
+<li>High-contrast visibility</li>
+<li>Simplified information hierarchy</li>
+</ul>
+<h4 id="thermal-layout"><strong>Thermal Layout</strong></h4>
+<ul>
+<li>Enhanced variometer sensitivity</li>
+<li>Wind direction prominence</li>
+<li>Thermal centering assistance</li>
+<li>Climb rate optimization</li>
+</ul>
+<h3 id="audio-system"><strong>Audio System</strong></h3>
+<ul>
+<li><strong>Multi-Tone Feedback</strong>: Different tones for lift, sink, and neutral</li>
+<li><strong>Volume Control</strong>: Adjustable audio levels</li>
+<li><strong>Frequency Selection</strong>: Customizable tone frequencies</li>
+<li><strong>Smart Muting</strong>: Automatic quiet periods during sink</li>
+</ul>
+<h3 id="configuration-system"><strong>Configuration System</strong></h3>
+<ul>
+<li><strong>JSON Settings</strong>: Human-readable configuration files</li>
+<li><strong>USB Configuration</strong>: Easy setup via computer connection</li>
+<li><strong>Parameter Tuning</strong>: Adjustable sensitivity and thresholds</li>
+<li><strong>Backup/Restore</strong>: Configuration file management</li>
+</ul>
+<h2 id="software-architecture">Software Architecture</h2>
+<h3 id="embassy-async-framework"><strong>Embassy Async Framework</strong></h3>
+<ul>
+<li><strong>Concurrent Tasks</strong>: Independent subsystems running simultaneously</li>
+<li><strong>Memory Safety</strong>: Rust's ownership system prevents common embedded bugs</li>
+<li><strong>Real-Time Scheduling</strong>: Deterministic task execution</li>
+<li><strong>Signal-Based IPC</strong>: Efficient inter-task communication</li>
+</ul>
+<h3 id="task-organization"><strong>Task Organization</strong></h3>
+<ul>
+<li><strong>GPS Reader</strong>: Hardware interface and data parsing</li>
+<li><strong>Sensor Management</strong>: Barometer, IMU, and compass handling</li>
+<li><strong>Altitude Estimation</strong>: Kalman filter processing</li>
+<li><strong>Wind Calculation</strong>: Circle-fitting algorithm execution</li>
+<li><strong>Display Rendering</strong>: E-paper update management</li>
+<li><strong>Audio Generation</strong>: Variometer tone production</li>
+<li><strong>Data Logging</strong>: File system and IGC recording</li>
+</ul>
+<h3 id="memory-management"><strong>Memory Management</strong></h3>
+<ul>
+<li><strong>Static Allocation</strong>: No heap fragmentation issues</li>
+<li><strong>Zero-Copy Buffers</strong>: Efficient data transfer between tasks</li>
+<li><strong>Compile-Time Optimization</strong>: Maximum performance through Rust compiler</li>
+<li><strong>Resource Safety</strong>: Guaranteed memory and resource cleanup</li>
+</ul>
+<hr />
+<p><em>EPVario's software represents state-of-the-art embedded programming applied to paragliding instrumentation. The combination of modern algorithms, safety-focused programming, and real-time performance delivers professional-grade capabilities in an accessible, open-source package.</em></p>
+
+
+    
+
+
+                    
+
+
+
+                    <nav class="mt-12 pt-8 border-t border-gray-500/15">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="prev-nav-item">
+                                
+    
+        
+        <a class="nav-button nav-button-prev group" href="https://epvario.github.io/">
+            <div class="nav-button-content">
+                <div class="nav-button-direction">
+                    <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span class="nav-button-label">Back to</span>
+                </div>
+                <div class="nav-button-title">EPV Open Source Variometer</div>
+            </div>
+        </a>
+    
+
+                            </div>
+                            <div class="next-nav-item">
+                                
+    
+        
+        
+        
+            
+            
+            
+                
+            
+                
+            
+                
+            
+        
+    
+
+                            </div>
+                        </div>
+                    </nav>
+                </main>
+
+                
+                    
+
+<div class="hidden lg:block">
+    <div class="sticky top-20 px-4 py-2 border-l border-gray-500/15">
+        <h4 class="text-lg font-bold mb-1">ON THIS PAGE</h4>
+            <ul class="menu menu-sm toc-menu">
+            
+                <li>
+                    
+                    <details class="toc-details">
+                        <summary>
+                            <a href="https://epvario.github.io/features/#software-features" class="toc-link">Software Features</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#core-flight-instruments" class="toc-link">Core Flight Instruments</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#navigation-safety-features" class="toc-link">Navigation &amp; Safety Features</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#flight-data-analysis" class="toc-link">Flight Data &amp; Analysis</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#advanced-algorithms" class="toc-link">Advanced Algorithms</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#user-interface" class="toc-link">User Interface</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#software-architecture" class="toc-link">Software Architecture</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                    
+                </li>
+            
+            </ul>
+    </div>
+</div>
+
+
+                
+                
+            </div>
+
+            <script>
+              // Determine theme: localStorage > extra.default_colorset > goyo-dark
+              // Expose theme config for global use (e.g., goyo.js)
+              window.defaultColorset = "light";
+              window.defaultBrightness = "normal";
+              window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
+              
+              // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+              var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+              var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+              
+              var mermaidTheme = "dark";
+              if(currentUserTheme == "goyo-light") {
+                mermaidTheme = "light";
+              }
+              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+              document.addEventListener('DOMContentLoaded', async () => {
+                const mermaidElements = document.querySelectorAll('.mermaid');
+
+                if (mermaidElements.length > 0) {
+                    await mermaid.run({
+                        nodes: mermaidElements
+                    });
+                }
+              });
+            </script>
+
+        </div>
+
+        
+        
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
+        
+            
+                
+
+
+
+    
+
+<label for="my-drawer-2" class="drawer-overlay"></label>
+<div class="mt-4 w-68 h-[calc(100vh-4rem)] bg-base-100 text-base-content flex flex-col overflow-auto">
+    
+    <ul class="menu w-full flex-grow">
+        
+        
+        
+            <li ><a class="hover:no-underline" href="https://epvario.github.io/introduction">Introduction</a></li>
+        
+            <li ><a class="hover:no-underline" href="https://epvario.github.io/usage">Usage</a></li>
+        
+            <li class="rounded bg-gray-500/15"><a class="hover:no-underline" href="https://epvario.github.io/features">Software Features</a></li>
+        
+        
+            
+            <li>
+                
+                    <details >
+                        <summary ><a class="hover:no-underline" href="https://epvario.github.io/downloads">Downloads</a></summary>
+                        <ul>
+                            
+                            
+                                <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/firmware">Firmware</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/config">online Configurator</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/agl">AGL Data</a></li>
+                            
+                            
+                        </ul>
+                    </details>
+                
+            </li>
+        
+    </ul>
+
+    
+<footer class="footer text-xs pt-4 px-4 text-base-content border-t border-gray-500/15">
+    <aside>
+        <p>
+            Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>
+        </p>
+    </aside>
+</footer>
+
+</div>
+
+            
+        </div>
+    </div>
+
+    
+        
+        <script type="text/javascript" src="https://epvario.github.io/goyo.js"></script>
+    
+</body>
+</html>
