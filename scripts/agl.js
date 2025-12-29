@@ -160,12 +160,12 @@
                 document.body.removeChild(link);
                 
                 // Update info panel to show download initiated
-                // document.getElementById('selected-info').innerHTML = `
-                //     <strong>Downloading: ${zipFile.name}</strong><br>
-                //     Coordinates: ${zipFile.latStart}°N-${zipFile.latEnd}°N, ${zipFile.lonStart}°E-${zipFile.lonEnd}°E<br>
-                //     Type: ${zipFile.type} block<br>
-                //     Area: ~111km × ~1110km
-                // `;
+                document.getElementById('selected-info').innerHTML = `
+                    <strong>Downloading: ${zipFile.name}</strong><br>
+                    Coordinates: ${zipFile.latStart}°N-${zipFile.latEnd}°N, ${zipFile.lonStart}°E-${zipFile.lonEnd}°E<br>
+                    Type: ${zipFile.type} block<br>
+                    Area: ~111km × ~1110km
+                `;
             });
 
             // Add hover effects
@@ -200,7 +200,7 @@
             
             L.marker([centerLat, centerLon], {
                 icon: L.divIcon({
-                    html: '&nbsp;', //  zipFile.name.replace('.zip', ''),
+                    html: zipFile.name.replace('.zip', ''),
                     className: 'grid-label',
                     iconSize: [100, 20],
                     iconAnchor: [50, 10]
