@@ -16,6 +16,9 @@
         <loc>https://epvario.github.io/downloads/firmware/</loc>
     </url>
     <url>
+        <loc>https://epvario.github.io/downloads/hardware/</loc>
+    </url>
+    <url>
         <loc>https://epvario.github.io/features/</loc>
     </url>
     <url>
@@ -23,8 +26,5 @@
     </url>
     <url>
         <loc>https://epvario.github.io/usage/</loc>
-    </url>
-    <url>
-        <loc>https://epvario.github.io/vario/</loc>
     </url>
 </urlset>

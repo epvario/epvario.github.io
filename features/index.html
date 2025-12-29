@@ -128,7 +128,7 @@
                 
                     
                         <li>
-                            <a class="btn btn-ghost hover:no-underline" href="/downloads">
+                            <a class="btn btn-ghost hover:no-underline" href="/downloads/firmware">
                                 <i class="fa-solid fa-download"></i>
                                 Downloads
                             </a>
@@ -168,95 +168,64 @@
                 <main class="prose w-full max-w-7xl mx-auto">
             
                     
-    <div class="mb-12 pb-4 border-b border-gray-500/15">
+    <!-- <div class="mb-12 pb-4 border-b border-gray-500/15">
         <h1>Features</h1>
         <p class="text-gray-500">Software features and algorithms in EPVario explained</p>
-    </div>
-    <p>EPVario's firmware is built with cutting-edge algorithms and modern embedded programming techniques to deliver professional-grade variometer functionality in a lightweight package.</p>
-<h2 id="core-flight-instruments">Core Flight Instruments</h2>
-<h3 id="real-time-variometer"><strong>Real-Time Variometer</strong></h3>
+    </div> -->
+    <h3 id="layout">Layout:</h3>
+<p><img src="/images/epv_layout.png" alt="epv layout" /></p>
+<h4 id="display">Display:</h4>
 <ul>
-<li><strong>Instant Response</strong>: &lt;100ms latency from pressure change to audio feedback</li>
-<li><strong>Sensitivity Control</strong>: Adjustable threshold for lift/sink detection</li>
-<li><strong>Audio Feedback</strong>: Multi-tone system with lift/sink indication</li>
 <li><strong>Visual Display</strong>: Large, clear vertical speed numbers</li>
-<li><strong>Filtering</strong>: Smart noise reduction while maintaining responsiveness</li>
-</ul>
-<h3 id="precision-altitude-tracking"><strong>Precision Altitude Tracking</strong></h3>
+<li><strong>partial Updates</strong>: uses partial Updates for fast refreshes</li>
+<li><strong>Instruments</strong>:
 <ul>
-<li><strong>Sensor Fusion</strong>: Advanced Kalman filter combines GPS and barometric data</li>
-<li><strong>Adaptive Filtering</strong>: VDOP-based GPS trust adjustment</li>
-<li><strong>MSL Accuracy</strong>: Mean Sea Level altitude with ±1m typical accuracy</li>
-<li><strong>QNH Support</strong>: Manual pressure setting for airport reference</li>
-<li><strong>Altitude Graphs</strong>: Historical altitude tracking and display</li>
+<li><strong>Numeric Vario</strong>: displays your current climb/sink rate in m/s</li>
+<li><strong>Altitude</strong>: your current altitude in meter above mean sea level</li>
+<li><strong>Altitude</strong>: your current altitude above Ground</li>
+<li><strong>Altitude Graph</strong>: displays last 60 second altitude change</li>
+<li><strong>Speed</strong>: GPS-derived ground speed in km/h</li>
+<li><strong>Glide Ratio</strong>: Calculated from speed and vertical velocity</li>
+<li><strong>Wind:</strong> relative Wind direction based on your heading and estimated speed in km/h</li>
+<li><strong>G-Force Monitoring</strong>: Acceleration display for flight envelope awareness</li>
+<li><strong>Flight-Timer:</strong></li>
+<li><strong>Temperature:</strong> displays the current Temperature inside the device</li>
+<li><strong>Battery Status</strong>: Continuous power level monitoring</li>
 </ul>
-<h3 id="advanced-wind-estimation"><strong>Advanced Wind Estimation</strong></h3>
-<p>Our sophisticated wind estimation system analyzes your flight path to calculate wind conditions:</p>
-<h4 id="circle-fitting-algorithm"><strong>Circle-Fitting Algorithm</strong></h4>
-<ul>
-<li><strong>Real-Time Analysis</strong>: Processes GPS tracks during thermal flight</li>
-<li><strong>Statistical Method</strong>: Least-squares optimization for accurate results</li>
-<li><strong>Multi-Sector Sampling</strong>: 6 samples per 60° sector for comprehensive data</li>
-<li><strong>Gradient Descent</strong>: Iterative optimization for precise wind vector calculation</li>
+</li>
 </ul>
-<h4 id="wind-display"><strong>Wind Display</strong></h4>
+<h2 id="real-time-variometer">Real-Time Variometer:</h2>
+<h4 id="barometric-variometer">Barometric Variometer:</h4>
 <ul>
-<li><strong>Speed &amp; Direction</strong>: Accurate wind speed (m/s) and direction (°)</li>
+<li><strong>Sensor Fusion</strong>: combines GPS altitude with standard barometric pressure to calculate offset</li>
+<li><strong>Instant Vario / thermal sniffer</strong>: uses accelerometer and gyroscope for instant response</li>
+</ul>
+<h4 id="audio">Audio:</h4>
+<ul>
+<li><strong>Feedback</strong>: Multi-tone system with lift/sink indication</li>
+</ul>
+<h4 id="wind-estimator">Wind Estimator:</h4>
+<ul>
+<li><strong>Speed &amp; Direction</strong>: Accurate wind speed (km/h) and direction</li>
 <li><strong>Visual Compass</strong>: Wind arrow overlay on compass display</li>
-<li><strong>Thermal Optimization</strong>: Helps identify wind drift during climbs</li>
-<li><strong>Historical Data</strong>: Wind tracking throughout flight</li>
 </ul>
-<h2 id="navigation-safety-features">Navigation &amp; Safety Features</h2>
-<h3 id="altitude-above-ground-level-agl"><strong>Altitude Above Ground Level (AGL)</strong></h3>
+<h4 id="navigation-safety-features">Navigation &amp; Safety Features</h4>
+<ul>
+<li><strong>Digital Compass</strong>: showing your heading based on GPS tracking</li>
+<li><strong>Wind Integration</strong>: Shows wind direction relative to heading</li>
+</ul>
+<h4 id="altitude-above-ground-level-agl"><strong>Altitude Above Ground Level (AGL)</strong></h4>
 <ul>
 <li><strong>SRTM Integration</strong>: Uses NASA Shuttle Radar Topography Mission data</li>
-<li><strong>Automatic Tiles</strong>: Downloads elevation data as needed</li>
-<li><strong>Terrain Awareness</strong>: Critical for safe flying in mountainous terrain</li>
 <li><strong>Dynamic Updates</strong>: Real-time AGL calculation and display</li>
-</ul>
-<h3 id="digital-compass-with-wind-overlay"><strong>Digital Compass with Wind Overlay</strong></h3>
-<ul>
-<li><strong>Magnetic Heading</strong>: Calibrated compass with 1-2° accuracy</li>
-<li><strong>Wind Integration</strong>: Shows wind direction relative to heading</li>
-<li><strong>Course Tracking</strong>: Visual flight direction indicator</li>
-<li><strong>Automatic Calibration</strong>: Self-calibrating magnetic declination</li>
-</ul>
-<h3 id="gps-quality-monitoring"><strong>GPS Quality Monitoring</strong></h3>
-<p>EPVario implements sophisticated GPS quality assessment:</p>
-<h4 id="vdop-based-filtering"><strong>VDOP-Based Filtering</strong></h4>
-<ul>
-<li><strong>Quality Levels</strong>: Excellent (&lt;600mm), Good (&lt;1000mm), Poor (&gt;1000mm)</li>
-<li><strong>Adaptive Thresholds</strong>: Strict requirements during initialization, relaxed during flight</li>
-<li><strong>Counter System</strong>: 50-packet initialization ensures stable GPS lock</li>
-<li><strong>Real-Time Assessment</strong>: Continuous monitoring of satellite geometry</li>
-</ul>
-<h4 id="multi-constellation-support"><strong>Multi-Constellation Support</strong></h4>
-<ul>
-<li><strong>GPS</strong>: US Global Positioning System</li>
-<li><strong>GLONASS</strong>: Russian satellite navigation</li>
-<li><strong>Galileo</strong>: European satellite system</li>
-<li><strong>BeiDou</strong>: Chinese navigation system</li>
-<li><strong>SBAS</strong>: Satellite-Based Augmentation Systems</li>
+<li><strong>HGT-Tiles</strong>: requires downloading HGT files from map and store on SD Card</li>
 </ul>
 <h2 id="flight-data-analysis">Flight Data &amp; Analysis</h2>
-<h3 id="igc-flight-logging"><strong>IGC Flight Logging</strong></h3>
-<p>Professional competition-ready flight recording:</p>
-<h4 id="fai-civl-compliance"><strong>FAI CIVL Compliance</strong></h4>
+<h4 id="igc-flight-logging"><strong>IGC Flight Logging</strong>:</h4>
 <ul>
-<li><strong>G-Record Security</strong>: Cryptographic verification of flight data</li>
-<li><strong>Competition Legal</strong>: Meets all requirements for FAI competitions</li>
-<li><strong>Data Integrity</strong>: Tamper-proof flight record format</li>
-<li><strong>Automatic Logging</strong>: No pilot intervention required</li>
-</ul>
-<p>-- #### <strong>Comprehensive Data</strong></p>
-<ul>
-<li><strong>3D Position</strong>: GPS coordinates with altitude</li>
-<li><strong>Time Stamps</strong>: Precise UTC timing for each point</li>
-<li><strong>Pressure Data</strong>: Barometric readings for verification</li>
-<li><strong>Sensor Status</strong>: GPS fix quality and satellite count</li>
-<li><strong>Event Markers</strong>: Takeoff, landing, and significant events</li>
-</ul>
-<h3 id="flight-statistics"><strong>Flight Statistics</strong></h3>
+<li><strong>Takeoff and Landing Detection</strong>: automatically detects takeoff and landing with audible information beep</li>
+<li><strong>Flight Logger</strong>: automatic start and stops recording</li>
+<li><strong>Post Flight Statistics</strong>: once landed, post flight statistics are shown
 <ul>
 <li><strong>Flight Time</strong>: Automatic takeoff/landing detection</li>
 <li><strong>Maximum Altitude</strong>: Highest point reached during flight</li>
@@ -264,108 +233,15 @@
 <li><strong>Average Speed</strong>: Flight performance metrics</li>
 <li><strong>Climb Analysis</strong>: Thermal performance statistics</li>
 </ul>
-<h3 id="real-time-performance-metrics"><strong>Real-Time Performance Metrics</strong></h3>
-<ul>
-<li><strong>Glide Ratio</strong>: Calculated from speed and vertical velocity</li>
-<li><strong>Horizontal Speed</strong>: GPS-derived ground speed with filtering</li>
-<li><strong>G-Force Monitoring</strong>: Acceleration display for flight envelope awareness</li>
-<li><strong>Battery Status</strong>: Continuous power level monitoring</li>
+</li>
 </ul>
-<h2 id="advanced-algorithms">Advanced Algorithms</h2>
-<h3 id="kalman-filter-implementation"><strong>Kalman Filter Implementation</strong></h3>
-<p>Our altitude estimation uses a sophisticated 3-state Extended Kalman Filter:</p>
-<h4 id="state-vector"><strong>State Vector</strong></h4>
+<h4 id="fai-civl-compliance"><strong>FAI CIVL Compliance</strong>:</h4>
 <ul>
-<li><strong>Altitude</strong>: Current height above mean sea level</li>
-<li><strong>Vertical Velocity</strong>: Rate of climb/descent</li>
-<li><strong>MSL Pressure</strong>: Sea level pressure reference</li>
+<li><strong>G-Record Security</strong>: Cryptographic verification of flight data</li>
+<li><strong>Competition Legal</strong>: Meets all requirements for FAI competitions</li>
+<li><strong>Data Integrity</strong>: Tamper-proof flight record format</li>
+<li><strong>Automatic Logging</strong>: No pilot intervention required</li>
 </ul>
-<h4 id="sensor-fusion"><strong>Sensor Fusion</strong></h4>
-<ul>
-<li><strong>GPS Updates</strong>: Position measurements with accuracy weighting</li>
-<li><strong>Barometric Updates</strong>: Pressure measurements with temperature compensation</li>
-<li><strong>Process Model</strong>: Physical motion model with noise characteristics</li>
-<li><strong>VDOP Boosting</strong>: Up to 3x gain multiplication for excellent GPS quality</li>
-</ul>
-<h3 id="thermal-detection-intelligence"><strong>Thermal Detection Intelligence</strong></h3>
-<ul>
-<li><strong>Pattern Recognition</strong>: Identifies thermal entry and centering</li>
-<li><strong>Lift Mapping</strong>: Tracks lift strength across thermal diameter</li>
-<li><strong>Audio Optimization</strong>: Enhanced feedback during thermal flight</li>
-<li><strong>Visual Indicators</strong>: Clear lift/sink indication on display</li>
-</ul>
-<h3 id="power-management"><strong>Power Management</strong></h3>
-<ul>
-<li><strong>Task-Based Architecture</strong>: Independent power management per subsystem</li>
-<li><strong>Display Optimization</strong>: Partial updates minimize power consumption</li>
-<li><strong>GPS Power Control</strong>: Intelligent duty cycling for battery life</li>
-<li><strong>Sleep Modes</strong>: Automatic power reduction during inactivity</li>
-</ul>
-<h2 id="user-interface">User Interface</h2>
-<h3 id="display-layouts"><strong>Display Layouts</strong></h3>
-<p>Multiple screen configurations optimized for different flight phases:</p>
-<h4 id="default-layout"><strong>Default Layout</strong></h4>
-<ul>
-<li>Large variometer display with altitude</li>
-<li>Compass and wind information</li>
-<li>Speed and glide ratio</li>
-<li>Battery and GPS status</li>
-</ul>
-<h4 id="numbers-layout"><strong>Numbers Layout</strong></h4>
-<ul>
-<li>Maximum-size numeric displays</li>
-<li>Essential flight data only</li>
-<li>High-contrast visibility</li>
-<li>Simplified information hierarchy</li>
-</ul>
-<h4 id="thermal-layout"><strong>Thermal Layout</strong></h4>
-<ul>
-<li>Enhanced variometer sensitivity</li>
-<li>Wind direction prominence</li>
-<li>Thermal centering assistance</li>
-<li>Climb rate optimization</li>
-</ul>
-<h3 id="audio-system"><strong>Audio System</strong></h3>
-<ul>
-<li><strong>Multi-Tone Feedback</strong>: Different tones for lift, sink, and neutral</li>
-<li><strong>Volume Control</strong>: Adjustable audio levels</li>
-<li><strong>Frequency Selection</strong>: Customizable tone frequencies</li>
-<li><strong>Smart Muting</strong>: Automatic quiet periods during sink</li>
-</ul>
-<h3 id="configuration-system"><strong>Configuration System</strong></h3>
-<ul>
-<li><strong>JSON Settings</strong>: Human-readable configuration files</li>
-<li><strong>USB Configuration</strong>: Easy setup via computer connection</li>
-<li><strong>Parameter Tuning</strong>: Adjustable sensitivity and thresholds</li>
-<li><strong>Backup/Restore</strong>: Configuration file management</li>
-</ul>
-<h2 id="software-architecture">Software Architecture</h2>
-<h3 id="embassy-async-framework"><strong>Embassy Async Framework</strong></h3>
-<ul>
-<li><strong>Concurrent Tasks</strong>: Independent subsystems running simultaneously</li>
-<li><strong>Memory Safety</strong>: Rust's ownership system prevents common embedded bugs</li>
-<li><strong>Real-Time Scheduling</strong>: Deterministic task execution</li>
-<li><strong>Signal-Based IPC</strong>: Efficient inter-task communication</li>
-</ul>
-<h3 id="task-organization"><strong>Task Organization</strong></h3>
-<ul>
-<li><strong>GPS Reader</strong>: Hardware interface and data parsing</li>
-<li><strong>Sensor Management</strong>: Barometer, IMU, and compass handling</li>
-<li><strong>Altitude Estimation</strong>: Kalman filter processing</li>
-<li><strong>Wind Calculation</strong>: Circle-fitting algorithm execution</li>
-<li><strong>Display Rendering</strong>: E-paper update management</li>
-<li><strong>Audio Generation</strong>: Variometer tone production</li>
-<li><strong>Data Logging</strong>: File system and IGC recording</li>
-</ul>
-<h3 id="memory-management"><strong>Memory Management</strong></h3>
-<ul>
-<li><strong>Static Allocation</strong>: No heap fragmentation issues</li>
-<li><strong>Zero-Copy Buffers</strong>: Efficient data transfer between tasks</li>
-<li><strong>Compile-Time Optimization</strong>: Maximum performance through Rust compiler</li>
-<li><strong>Resource Safety</strong>: Guaranteed memory and resource cleanup</li>
-</ul>
-<hr />
-<p><em>EPVario's software represents state-of-the-art embedded programming applied to paragliding instrumentation. The combination of modern algorithms, safety-focused programming, and real-time performance delivers professional-grade capabilities in an accessible, open-source package.</em></p>
 
 
     
@@ -428,20 +304,12 @@
                     
                     <details class="toc-details">
                         <summary>
-                            <a href="https://epvario.github.io/features/#core-flight-instruments" class="toc-link">Core Flight Instruments</a>
+                            <a href="https://epvario.github.io/features/#layout" class="toc-link">Layout:</a>
                         </summary>
                         <ul>
                             
                                 <li>
-                                    <a href="https://epvario.github.io/features/#real-time-variometer" class="toc-link">Real-Time Variometer</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#precision-altitude-tracking" class="toc-link">Precision Altitude Tracking</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#advanced-wind-estimation" class="toc-link">Advanced Wind Estimation</a>
+                                    <a href="https://epvario.github.io/features/#display" class="toc-link">Display:</a>
                                 </li>
                             
                         </ul>
@@ -453,20 +321,28 @@
                     
                     <details class="toc-details">
                         <summary>
-                            <a href="https://epvario.github.io/features/#navigation-safety-features" class="toc-link">Navigation &amp; Safety Features</a>
+                            <a href="https://epvario.github.io/features/#real-time-variometer" class="toc-link">Real-Time Variometer:</a>
                         </summary>
                         <ul>
                             
                                 <li>
+                                    <a href="https://epvario.github.io/features/#barometric-variometer" class="toc-link">Barometric Variometer:</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#audio" class="toc-link">Audio:</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#wind-estimator" class="toc-link">Wind Estimator:</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/features/#navigation-safety-features" class="toc-link">Navigation &amp; Safety Features</a>
+                                </li>
+                            
+                                <li>
                                     <a href="https://epvario.github.io/features/#altitude-above-ground-level-agl" class="toc-link">Altitude Above Ground Level (AGL)</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#digital-compass-with-wind-overlay" class="toc-link">Digital Compass with Wind Overlay</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#gps-quality-monitoring" class="toc-link">GPS Quality Monitoring</a>
                                 </li>
                             
                         </ul>
@@ -483,90 +359,11 @@
                         <ul>
                             
                                 <li>
-                                    <a href="https://epvario.github.io/features/#igc-flight-logging" class="toc-link">IGC Flight Logging</a>
+                                    <a href="https://epvario.github.io/features/#igc-flight-logging" class="toc-link">IGC Flight Logging:</a>
                                 </li>
                             
                                 <li>
-                                    <a href="https://epvario.github.io/features/#flight-statistics" class="toc-link">Flight Statistics</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#real-time-performance-metrics" class="toc-link">Real-Time Performance Metrics</a>
-                                </li>
-                            
-                        </ul>
-                    </details>
-                    
-                </li>
-            
-                <li>
-                    
-                    <details class="toc-details">
-                        <summary>
-                            <a href="https://epvario.github.io/features/#advanced-algorithms" class="toc-link">Advanced Algorithms</a>
-                        </summary>
-                        <ul>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#kalman-filter-implementation" class="toc-link">Kalman Filter Implementation</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#thermal-detection-intelligence" class="toc-link">Thermal Detection Intelligence</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#power-management" class="toc-link">Power Management</a>
-                                </li>
-                            
-                        </ul>
-                    </details>
-                    
-                </li>
-            
-                <li>
-                    
-                    <details class="toc-details">
-                        <summary>
-                            <a href="https://epvario.github.io/features/#user-interface" class="toc-link">User Interface</a>
-                        </summary>
-                        <ul>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#display-layouts" class="toc-link">Display Layouts</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#audio-system" class="toc-link">Audio System</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#configuration-system" class="toc-link">Configuration System</a>
-                                </li>
-                            
-                        </ul>
-                    </details>
-                    
-                </li>
-            
-                <li>
-                    
-                    <details class="toc-details">
-                        <summary>
-                            <a href="https://epvario.github.io/features/#software-architecture" class="toc-link">Software Architecture</a>
-                        </summary>
-                        <ul>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#embassy-async-framework" class="toc-link">Embassy Async Framework</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#task-organization" class="toc-link">Task Organization</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/features/#memory-management" class="toc-link">Memory Management</a>
+                                    <a href="https://epvario.github.io/features/#fai-civl-compliance" class="toc-link">FAI CIVL Compliance:</a>
                                 </li>
                             
                         </ul>
@@ -634,8 +431,6 @@
         
             <li ><a class="hover:no-underline" href="https://epvario.github.io/introduction">Introduction</a></li>
         
-            <li ><a class="hover:no-underline" href="https://epvario.github.io/vario">The Vario</a></li>
-        
             <li ><a class="hover:no-underline" href="https://epvario.github.io/usage">Usage</a></li>
         
             <li class="rounded bg-gray-500/15"><a class="hover:no-underline" href="https://epvario.github.io/features">Features</a></li>
@@ -654,6 +449,8 @@
                                 <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/firmware">Firmware</a></li>
                             
                                 <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/agl">AGL Data</a></li>
+                            
+                                <li ><a class="hover:no-underline" href="https://epvario.github.io/downloads/hardware">Hardware</a></li>
                             
                             
                         </ul>
