@@ -170,32 +170,7 @@
         <h1>Firmware</h1>
         <p class="text-gray-500"></p>
     </div>
-    <div class="pretty-link-card group">
-  <a href="&#x2F;firmware&#x2F;epvario_v0.1.3-RC15_2772621.uf2" target="_blank" rel="noopener noreferrer" class="block">
-    <div class="flex items-start gap-4 p-5">
-      
-      <div class="flex-1 min-w-0">
-        <div class="flex items-start justify-between gap-2 mb-2">
-          <h3 class="pretty-link-title">
-            click here to download the latest firmware
-          </h3>
-          <div class="pretty-link-icon-wrapper">
-            <svg class="pretty-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
-          </div>
-        </div>
-        
-        <div class="pretty-link-url">
-          <svg class="w-3.5 h-3.5 mr-1.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-          </svg>
-          &#x2F;firmware&#x2F;epvario_v0.1.3-RC15_2772621.uf2
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
+    <h3 id="latest-firmware"><a href="/firmware/epvario_v0.1.3-RC15_2772621.uf2">latest firmware</a></h3>
 <h4 id="attention-calibration-of-gyro-acc-mag-required-press-and-hold-both-volume-buttons-for-5-seconds-after-boot-to-start-the-calibration-wizard">Attention: Calibration of Gyro/Acc/Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</h4>
 <h4 id="firmware-update-instructions">Firmware update instructions:</h4>
 <ul>
@@ -206,7 +181,7 @@
 <li>unplug the vario</li>
 </ul>
 <hr />
-<h3 id="v0-1-3-rc15-download">v0.1.3(RC15) <a href="/firmware/epvario_v0.1.3-RC15_2772621.uf2"><em>download</em></a></h3>
+<h3 id="v0-1-3-rc15-download">v0.1.3(RC15) <a href="/firmware/epvario_v0.1.3-RC15_2772621.uf2">download</a></h3>
 <ul>
 <li>complete rebase on master</li>
 <li>new: config "takeoff_volume":"Mute|Low|Medium|High|Full"
@@ -231,21 +206,21 @@
 <li>Attention: Calibration of Gyro/Acc/Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start.</li>
 </ul>
 <hr />
-<h3 id="v0-1-3-rc13-download">v0.1.3(RC13) <a href="/firmware/epvario_v0.1.3-RC13_e9c6c67.uf2"><em>download</em></a></h3>
+<h3 id="v0-1-3-rc13-download">v0.1.3(RC13) <a href="/firmware/epvario_v0.1.3-RC13_e9c6c67.uf2">download</a></h3>
 <ul>
 <li>fix: implement new wind estimator approach</li>
 <li>fix: AGL tile selection in western area</li>
 <li>new: refresh initial AMSL altitude after high accuracy GPS-lock</li>
 </ul>
 <hr />
-<h4 id="v0-1-3-rc12-download">v0.1.3(RC12) <a href="/firmware/epvario_v0.1.3-RC12_68d87af.uf2">download</a></h4>
+<h3 id="v0-1-3-rc12-download">v0.1.3(RC12) <a href="/firmware/epvario_v0.1.3-RC12_68d87af.uf2">download</a></h3>
 <ul>
 <li>fix: finalized the display driver (no ghosting, fadeout, smeirs)</li>
 <li><strong>removed</strong> config element:  <del>"display_version": 1</del></li>
 <li>known issues: wind estimator arrow is 180deg flipped</li>
 </ul>
 <hr />
-<h4 id="v0-1-3-rc11-download">v0.1.3(RC11) <a href="/firmware/epvario_v0.1.3-RC11_b3564cc.uf2">download</a></h4>
+<h3 id="v0-1-3-rc11-download">v0.1.3(RC11) <a href="/firmware/epvario_v0.1.3-RC11_b3564cc.uf2">download</a></h3>
 <ul>
 <li>fix: sporadic hickups after landing before stats screen</li>
 <li>fix: randomly no config loaded</li>
@@ -253,7 +228,7 @@
 <li>reduce GPS update rate to 5Hz</li>
 </ul>
 <hr />
-<h4 id="v0-1-3-rc10-download">v0.1.3(RC10) <a href="/firmware/epvario_v0.1.3-RC10-d6b2593.uf2">download</a></h4>
+<h3 id="v0-1-3-rc10-download">v0.1.3(RC10) <a href="/firmware/epvario_v0.1.3-RC10-d6b2593.uf2">download</a></h3>
 <ul>
 <li>new: widget altitude gain, which displays difference to 30sec ago</li>
 <li>new: configurable Flight Screen (Default/Numbers)</li>
@@ -262,7 +237,7 @@
 <pre data-lang="shell" style="background-color:#2b303b;color:#c0c5ce;" class="language-shell "><code class="language-shell" data-lang="shell"><span>&quot;flight_layout&quot;: &quot;[Default|Numbers]&quot;,
 </span></code></pre>
 <hr />
-<h4 id="v0-1-3-rc9-download">v0.1.3(RC9) <a href="/firmware/epvario_v0.1.3-RC9_01faa08.uf2">download</a></h4>
+<h3 id="v0-1-3-rc9-download">v0.1.3(RC9) <a href="/firmware/epvario_v0.1.3-RC9_01faa08.uf2">download</a></h3>
 <ul>
 <li>rebased on master b8361b2</li>
 <li>improve config deserialization</li>
@@ -278,13 +253,13 @@
 </span><span>&quot;sink_threshold&quot;: -2.0, 
 </span></code></pre>
 <hr />
-<h4 id="v0-1-3-rc7">v0.1.3(RC7)</h4>
+<h3 id="v0-1-3-rc7">v0.1.3(RC7)</h3>
 <ul>
 <li>change: wind direction symbol is a full arrow now</li>
 <li>fix: AGL</li>
 </ul>
 <hr />
-<h4 id="v0-1-3-rc4">v0.1.3(RC4)</h4>
+<h3 id="v0-1-3-rc4">v0.1.3(RC4)</h3>
 <ul>
 <li>new: adding SRTM elevation data to calculate and display AGL altitude</li>
 <li>change: new display layout</li>
@@ -293,7 +268,7 @@
 <li>fix: limit IGC handler to write BRecords once per second</li>
 </ul>
 <hr />
-<h4 id="v0-1-2">v0.1.2</h4>
+<h3 id="v0-1-2">v0.1.2</h3>
 <ul>
 <li>new: button tones</li>
 <li>new: takeoff and landing tones</li>
@@ -302,12 +277,12 @@
 <li>new: show post flight stats until a button is pressed or shutdown is initiated</li>
 <li>fix: initial ghosting after power on</li>
 </ul>
-<h4 id="v0-1-1">v0.1.1</h4>
+<h3 id="v0-1-1">v0.1.1</h3>
 <ul>
 <li>new: improve IGC B-record</li>
 <li>fix: formatting of windspeed estimator causing device freeze</li>
 </ul>
-<h4 id="v0-1-0">v0.1.0</h4>
+<h3 id="v0-1-0">v0.1.0</h3>
 <ul>
 <li>initial release</li>
 </ul>
@@ -371,13 +346,22 @@
             
                 <li>
                     
-                    <a href="https://epvario.github.io/downloads/firmware/#attention-calibration-of-gyro-acc-mag-required-press-and-hold-both-volume-buttons-for-5-seconds-after-boot-to-start-the-calibration-wizard" class="toc-link">Attention: Calibration of Gyro&#x2F;Acc&#x2F;Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</a>
-                    
-                </li>
-            
-                <li>
-                    
-                    <a href="https://epvario.github.io/downloads/firmware/#firmware-update-instructions" class="toc-link">Firmware update instructions:</a>
+                    <details class="toc-details">
+                        <summary>
+                            <a href="https://epvario.github.io/downloads/firmware/#latest-firmware" class="toc-link">latest firmware</a>
+                        </summary>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/downloads/firmware/#attention-calibration-of-gyro-acc-mag-required-press-and-hold-both-volume-buttons-for-5-seconds-after-boot-to-start-the-calibration-wizard" class="toc-link">Attention: Calibration of Gyro&#x2F;Acc&#x2F;Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://epvario.github.io/downloads/firmware/#firmware-update-instructions" class="toc-link">Firmware update instructions:</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
                     
                 </li>
             
@@ -395,50 +379,61 @@
             
                 <li>
                     
-                    <details class="toc-details">
-                        <summary>
-                            <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc13-download" class="toc-link">v0.1.3(RC13) download</a>
-                        </summary>
-                        <ul>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc12-download" class="toc-link">v0.1.3(RC12) download</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc11-download" class="toc-link">v0.1.3(RC11) download</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc10-download" class="toc-link">v0.1.3(RC10) download</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc9-download" class="toc-link">v0.1.3(RC9) download</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc7" class="toc-link">v0.1.3(RC7)</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc4" class="toc-link">v0.1.3(RC4)</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-2" class="toc-link">v0.1.2</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-1" class="toc-link">v0.1.1</a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-0" class="toc-link">v0.1.0</a>
-                                </li>
-                            
-                        </ul>
-                    </details>
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc13-download" class="toc-link">v0.1.3(RC13) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc12-download" class="toc-link">v0.1.3(RC12) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc11-download" class="toc-link">v0.1.3(RC11) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc10-download" class="toc-link">v0.1.3(RC10) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc9-download" class="toc-link">v0.1.3(RC9) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc7" class="toc-link">v0.1.3(RC7)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc4" class="toc-link">v0.1.3(RC4)</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-2" class="toc-link">v0.1.2</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-1" class="toc-link">v0.1.1</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-0" class="toc-link">v0.1.0</a>
                     
                 </li>
             
