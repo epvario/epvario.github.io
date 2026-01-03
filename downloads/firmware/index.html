@@ -170,16 +170,30 @@
         <h1>Firmware</h1>
         <p class="text-gray-500"></p>
     </div> -->
-    <h3 id="latest-firmware"><a href="/firmware/epvario_v0.1.3-RC15_2772621.uf2">&gt;Latest firmware&lt;</a></h3>
+    <h3 id="latest-firmware"><a href="/firmware/epvario_v0.1.3-RC16_a2a228f.uf2">&gt;Latest firmware&lt;</a></h3>
 <h3 id="firmware-update-instructions"><a href="/howto#how-do-i-update-my-vario-for-new-features">&gt;Firmware update instructions&lt;</a></h3>
 <hr />
-<h3 id="v0-1-3-rc15-download">v0.1.3(RC15) <a href="/firmware/epvario_v0.1.3-RC15_2772621.uf2">download</a></h3>
+<h3 id="v0-1-3-rc16-download">v0.1.3(RC16) <a href="/firmware/epvario_v0.1.3-RC16_a2a228f.uf2">download</a></h3>
+<ul>
+<li>Attention: Calibration of Gyro/Acc/Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</li>
+<li>align INS to VQF design (https://arxiv.org/pdf/2203.17024) by:
+<ul>
+<li>remove GNSS acceleration calculation and velocity tracking</li>
+<li>remove bias estimation from GNSS</li>
+<li>remove convergence time check and bias filter</li>
+</ul>
+</li>
+<li>enhance calibration wizard</li>
+</ul>
+<hr />
+<h3 id="v0-1-3-rc15">v0.1.3(RC15)</h3>
 <ul>
 <li>Attention: Calibration of Gyro/Acc/Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</li>
 <li>complete rebase on master</li>
 <li>new: config "takeoff_volume":"Mute|Low|Medium|High|Full"
 <ul>
-<li>Volume will be set prior Takeoff and "startup_volume" will be restored after landing</li>
+<li><code>takeoff_volume</code> Volume will be set right before Takeoff</li>
+<li><code>startup_volume</code> will be set on power up and restored after landing</li>
 </ul>
 </li>
 <li>INS fixes:
@@ -352,7 +366,13 @@
             
                 <li>
                     
-                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc15-download" class="toc-link">v0.1.3(RC15) download</a>
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc16-download" class="toc-link">v0.1.3(RC16) download</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc15" class="toc-link">v0.1.3(RC15)</a>
                     
                 </li>
             
