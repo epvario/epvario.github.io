@@ -27,3 +27,13 @@ ul li a :hover {
 a:hover { 
   color: orange;
 }
+
+.hero-description{color:#2b2e33}
+
+.hero-description{color:#9ca3af}[data-theme=night][data-brightness=darker] 
+.hero-description{color:#808088}[data-theme=night][data-brightness=lighter] 
+.hero-description{color:#b8c0d0}[data-theme=lofi] 
+.hero-description{color:#2b2e33}[data-theme=lofi][data-brightness=darker] 
+.hero-description{color:#475569}[data-theme=lofi][data-brightness=lighter] 
+
+.hero-description{color:#94a3b8}
