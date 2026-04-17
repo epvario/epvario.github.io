@@ -170,8 +170,23 @@
         <h1>Firmware</h1>
         <p class="text-gray-500"></p>
     </div> -->
-    <h3 id="latest-firmware"><a href="/firmware/epvario_v0.1.3-RC17_4fad25d.uf2">&gt;Latest firmware&lt;</a></h3>
+    <h3 id="latest-firmware"><a href="/firmware/epvario_v0.1.3-RC18_c7a859d.uf2">&gt;Latest firmware&lt;</a></h3>
 <h3 id="firmware-update-instructions"><a href="/howto#how-do-i-update-my-vario-for-new-features">&gt;Firmware update instructions&lt;</a></h3>
+<hr />
+<h3 id="v0-1-3-rc18-download">v0.1.3(RC18) <a href="/firmware/epvario_v0.1.3-RC18_c7a859d.uf2">download</a></h3>
+<ul>
+<li>adding Weak Lift detector
+<ul>
+<li>outputs a short tone between sink tone and climb threshold to notice reduced sink.</li>
+<li>enable / disable by long bottom press</li>
+<li>tune via new config item:</li>
+<li><code>weaklift_threshold: -1.5</code></li>
+</ul>
+</li>
+<li>add audio high pass filter to improve tone clarity</li>
+<li>increase audio frequency by 100Hz to improve sink tone penetration</li>
+<li>minor tune of INS filter</li>
+</ul>
 <hr />
 <h3 id="v0-1-3-rc17-download">v0.1.3(RC17) <a href="/firmware/epvario_v0.1.3-RC17_4fad25d.uf2">download</a></h3>
 <ul>
@@ -197,7 +212,7 @@
 <ul>
 <li>Attention: Calibration of Gyro/Acc/Mag required. Press and Hold both Volume Buttons for 5 seconds after boot to start the calibration wizard.</li>
 <li>complete rebase on master</li>
-<li>new: config "takeoff_volume":"Mute|Low|Medium|High|Full"
+<li>new: config <code>"takeoff_volume": "Mute|Low|Medium|High|Full"</code>
 <ul>
 <li><code>takeoff_volume</code> Volume will be set right before Takeoff</li>
 <li><code>startup_volume</code> will be set on power up and restored after landing</li>
@@ -368,6 +383,12 @@
                 <li>
                     
                     <a href="https://epvario.github.io/downloads/firmware/#firmware-update-instructions" class="toc-link">&gt;Firmware update instructions&lt;</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://epvario.github.io/downloads/firmware/#v0-1-3-rc18-download" class="toc-link">v0.1.3(RC18) download</a>
                     
                 </li>
             
