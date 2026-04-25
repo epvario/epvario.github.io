@@ -170,7 +170,7 @@
         <h1>Configurator</h1>
         <p class="text-gray-500"></p>
     </div> -->
-    <p><em>use with v0.1.3RC15+</em></p>
+    <p><em>use with v0.1.3RC18+</em></p>
 <p>Define and download your config file here and save it to the Vario SD card:</p>
   <script>
     function generateConfig() {
@@ -184,6 +184,7 @@
 
         climb_threshold: parseFloat(Number.parseFloat( document.getElementById('climb_threshold').value).toFixed(2)),
         sink_threshold: parseFloat(Number.parseFloat( document.getElementById('sink_threshold').value).toFixed(2)),
+        weaklift_threshold: parseFloat(Number.parseFloat( document.getElementById('weaklift_threshold').value).toFixed(2)),
         shutdown_information: document.getElementById('shutdown_information').value,
       };
 
@@ -228,9 +229,9 @@ float: left;
 </label></p>
 <p><label>Startup Volume:
 <select id="startup_volume" class="select">
-<option>Mute</option>
+<option selected>Mute</option>
 <option>Low</option>
-<option selected>Medium</option>
+<option>Medium</option>
 <option>High</option>
 <option>Full</option>
 </select>
@@ -264,6 +265,9 @@ float: left;
 </label></p>
 <p><label>Sink Threshold:
 <input type="number" step="0.1" id="sink_threshold" class="input" min="-10" max="0" value="-2.0" />
+</label></p>
+<p><label>Weaklift Threshold:
+<input type="number" step="0.1" id="weaklift_threshold" class="input" min="-10" max="0" value="-1.5" />
 </label></p>
 <p><label>Shutdown Information:
 <input type="text" id="shutdown_information" class="input" placeholder="will remain visible after shut down"/>
